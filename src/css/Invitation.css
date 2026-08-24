@@ -1,0 +1,112 @@
+.invitacion-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.invitacion-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 430px;
+  padding: 0 20px;
+}
+
+.monograma {
+  width: 200px;
+  height: auto;
+}
+
+.nombre-fecha {
+  margin-top: -140px;
+  width: 105%;
+  max-width: 450px;
+  height: auto;
+}
+
+.noscasamos {
+  margin-top: -280px;
+  width: 120%;
+  max-width: 350px;
+  height: auto;
+}
+
+.hotel {
+  margin-top: -250px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.invitacion-text {
+  font-family: 'SecondaryFont', sans-serif;
+  color: #ffffff;
+  font-size: 26px;
+  margin-top: -40px;
+}
+
+.corazon {
+  margin-top: -30px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.countdown {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.countdown-item:first-child .countdown-numero {
+  color: #407C9D;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 12px 16px;
+  min-width: 60px;
+}
+
+.countdown-numero {
+  font-family: 'SecondaryFont', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.countdown-label {
+  font-family: 'SecondaryFont', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .invitacion-card {
+    padding: 0 15px;
+  }
+}

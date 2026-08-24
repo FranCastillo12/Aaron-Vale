@@ -1,0 +1,253 @@
+.itinerario-container {
+    width: 100%;
+  display: flex;
+  flex-direction: column;   /* clave: título arriba, tarjetas abajo */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.tarjetas-wrapper {
+  display: flex;
+  flex-direction: row;      /* las dos tarjetas en fila */
+  gap: 40px;
+  flex-wrap: wrap;           /* en mobile se acomodan una debajo de otra */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.itinerario-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1100px; /* subí esto para que quepan tarjetas más grandes en desktop */
+  padding: 0 20px;
+}
+
+.itinerario-titulo {
+  font-size: 48px;
+}
+
+.Itinerario {
+  margin-top: -60px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Wrapper para acomodar las dos tarjetas lado a lado */
+.tarjetas-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* en mobile se acomodan una debajo de otra */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ===== FLIP CARD ===== */
+.flip-container {
+  width: 650px;
+  height: 650px;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.volteada {
+  transform: rotateY(180deg);
+}
+
+.cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cara-atras {
+  transform: rotateY(180deg);
+}
+
+/* ===== TARJETA (cada cara) ===== */
+.tarjeta-contenedor {
+  position: relative;
+  width: 650px;
+  height: 650px;
+  background: url(../assets/images/itinerary/Tarjeta.png) center / 100% 100% no-repeat;
+}
+
+.texto-tarjeta {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ACC6DE;
+  font-family: PrimaryFont;
+  font-size: 55px;
+  margin: 0;
+  z-index: 2;
+}
+
+.ilustracion {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54%;
+  height: auto;
+}
+
+.texto-atras {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ACC6DE;
+  font-family: PrimaryFont;
+  font-size: 32px;
+  padding: 20px;
+  margin: 0;
+  z-index: 2;
+}
+
+.contenido-atras {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 75%;
+  z-index: 2;
+}
+
+.texto-tarjeta-atras {
+  color: #ACC6DE;
+  font-family: PrimaryFont;
+  font-size: 55px;
+  margin: 0 0 6px 0;
+}
+
+.info-atras {
+  color: #ACC6DE;
+  font-family: SecondaryFont;
+  font-size: 30px;
+  align-items: center;
+  margin: 0;
+}
+.boton-ubicacion {
+  width: 30%;
+  margin-top: 20px;
+  background-color: #ACC6DE;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: SecondaryFont;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.boton-ubicacion:hover {
+  background-color: #8fb0cf;
+  transform: scale(1.05);
+}
+
+
+
+/* ===== RESPONSIVE - TABLET ===== */
+@media (max-width: 900px) {
+  .tarjetas-wrapper {
+    gap: 24px;
+  }
+
+  .flip-container,
+  .tarjeta-contenedor {
+    width: 480px;
+    height: 480px;
+  }
+
+  .texto-tarjeta {
+    font-size: 42px;
+  }
+
+  .texto-tarjeta-atras {
+    font-size: 34px;
+  }
+
+  .info-atras {
+    font-size: 20px;
+  }
+}
+
+/* ===== RESPONSIVE - MOBILE ===== */
+@media (max-width: 500px) {
+  .itinerario-container {
+    padding: 0 16px;
+  }
+
+  .Itinerario {
+    max-width: 280px;
+    margin-top: -30px;
+  }
+
+  .tarjetas-wrapper {
+    flex-direction: column;   /* apiladas, una debajo de otra */
+    gap: 30px;
+  }
+
+  .flip-container,
+  .tarjeta-contenedor {
+    width: 90vw;               /* ocupa casi todo el ancho de pantalla */
+    height: 90vw;               /* se mantiene cuadrada */
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .texto-tarjeta {
+    font-size: 30px;
+    top: 25%;
+  }
+
+  .texto-tarjeta-atras {
+    font-size: 26px;
+  }
+
+  .info-atras {
+    font-size: 16px;
+  }
+
+  .contenido-atras {
+    gap: 8px;
+  }
+
+  .boton-ubicacion {
+    
+    font-size: 10px;
+  }
+}

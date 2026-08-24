@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+   overflow-x: hidden;
+    background: #ACC6DE;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+@font-face {
+  font-family: 'PrimaryFont';
+  src: url('./assets/fonts/JaneAust_principal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SecondaryFont';
+  src: url('./assets/fonts/Caveat_tiposecundaria.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
