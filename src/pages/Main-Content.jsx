@@ -4,6 +4,8 @@ import CouplePhoto from "../components/CouplePhoto";
 import Itinerary from "../components/Itinerary";
 import Details from "../components/Details";
 import Activities from "../components/Activities";
+import Lodging from "../components/Lodging";
+import Gifts from "../components/Gifts";
 
 export default function MainContent() {
   return (
@@ -14,6 +16,8 @@ export default function MainContent() {
       <Itinerary />
       <Details />
       <Activities />
+      <Lodging />
+      <Gifts />
     </>
   );
 }

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -42,7 +43,7 @@
 
 .tarjetas-wrapper {
   display: flex;
-  flex-direction: column; /* mobile: en columna */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -50,9 +51,9 @@
   margin-top: -100px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .tarjetas-wrapper {
-    flex-direction: row; /* desktop: en fila */
+    flex-direction: row;
     align-items: flex-start;
     gap: 40px;
   }

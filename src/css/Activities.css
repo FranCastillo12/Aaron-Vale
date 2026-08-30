@@ -18,7 +18,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-    gap: 8px;
+
 }
 
 .paso {
@@ -39,7 +39,7 @@
 }
 
 .paso-icono {
-  width: 130px;
+  width: 150px;
   height: auto;
   
 }
@@ -86,13 +86,14 @@
 
 /* Flecha 1: de Tuktuk (izq) hacia Ceremonia (der, abajo) */
 .flecha-1 {
-  bottom: -215px;
-  right: -40px;
+  bottom: -225px;
+  right: -45px;
+  transform: rotate(20deg);
 }
 
 /* Flecha 2: de Ceremonia (der) hacia Cocktail (izq, abajo) */
 .flecha-2 {
-  bottom: -135px;
+  bottom: -145px;
   left: -7px;
 }
 
@@ -104,12 +105,45 @@
 
 /* Flecha 4: de Comida (der) hacia Baile (izq, abajo) */
 .flecha-4 {
-  bottom: -170px;
-  left: -40px;
+  bottom: -210px;
+  left: -7px;
 }
 
 /* Flecha 5: de Baile (izq) hacia Queque (der, abajo) */
 .flecha-5 {
-  bottom: -220px;
+  bottom: -210px;
+  right: -25px;
+}
+
+
+@media (min-width: 900px) {
+  .flecha-1 {
+  bottom: -225px;
+  right: 15px;
+  transform: rotate(20deg);
+}
+
+/* Flecha 2: de Ceremonia (der) hacia Cocktail (izq, abajo) */
+.flecha-2 {
+  bottom: -145px;
+  left: 45px;
+}
+
+/* Flecha 3: de Cocktail (izq) hacia Comida (der, abajo) */
+.flecha-3 {
+  bottom: -210px;
+  right: -25px;
+}
+
+/* Flecha 4: de Comida (der) hacia Baile (izq, abajo) */
+.flecha-4 {
+  bottom: -210px;
+  left: 45px;
+}
+
+/* Flecha 5: de Baile (izq) hacia Queque (der, abajo) */
+.flecha-5 {
+  bottom: -210px;
   right: 40px;
+}
 }

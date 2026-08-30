@@ -2,7 +2,7 @@ import "../css/Invitation.css";
 import monograma from "../assets/monogramaA&V.png";
 import NombreYFecha from "../assets/aaron&vale_nombrefecha.PNG";
 import Noscasamos from "../assets/NOSACOMPANAS.png";
-import Hotel from "../assets/ILUSTRACION_HOTEL.PNG";
+import Hotel from "../assets/images/Lodging/ILUSTRACION_HOTEL.PNG";
 import Corazon from "../assets/ILUSTRACION_CORAZON.PNG";
 
 
