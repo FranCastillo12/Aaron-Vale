@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import "../css/Attendance.css";
-import Borde from "../assets/images/Attendance/BORDE_RSVP.png";
-import Pareja from "../assets/images/Activities/Baile.png";
+import Borde from "../../public/images/Attendance/BORDE_RSVP.png";
+import Pareja from "../../public/images/Activities/Baile.png";
 
 
 function Attendance() {

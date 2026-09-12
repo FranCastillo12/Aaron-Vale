@@ -1,9 +1,9 @@
 import "../css/Invitation.css";
-import monograma from "../assets/monogramaA&V.png";
-import NombreYFecha from "../assets/aaron&vale_nombrefecha.PNG";
-import Noscasamos from "../assets/NOSACOMPANAS.png";
-import Hotel from "../assets/images/Lodging/ILUSTRACION_HOTEL.PNG";
-import Corazon from "../assets/ILUSTRACION_CORAZON.PNG";
+import monograma from "../../public/images/monogramaA&V.png";
+import NombreYFecha from "../../public/images/aaron&vale_nombrefecha.PNG";
+import Noscasamos from "../../public/images/NOSACOMPANAS.png";
+import Hotel from "../../public/images/Lodging/ILUSTRACION_HOTEL.PNG";
+import Corazon from "../../public/images/ILUSTRACION_CORAZON.PNG";
 
 
 

@@ -1,5 +1,5 @@
 import "../css/CouplePhoto.css";
-import Olivia from "../assets/Olivia.jpg";
+import Olivia from "../../public/images/Olivia.jpg";
 
 
 function CouplePhoto() {

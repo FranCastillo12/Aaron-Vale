@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 import "../css/Lodging.css";
-import Hotel from "../assets/images/Lodging/ILUSTRACION_HOTEL.png";
-import Tarjeta from "../assets/images/Lodging/tarjeta_hotel.jpg";
+import Hotel from "../../public/images/Lodging/ILUSTRACION_HOTEL.png";
+import Tarjeta from "../../public/images/Lodging/tarjeta_hotel.jpg";
+
+
 
 
 function Lodging() {

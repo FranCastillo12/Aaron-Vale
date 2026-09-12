@@ -1,9 +1,9 @@
 import "../css/Invitation.css";
-import monograma from "../assets/monogramaA&V.png";
-import NombreYFecha from "../assets/aaron&vale_nombrefecha.PNG";
-import Noscasamos from "../assets/NOSACOMPANAS.png";
+import monograma from "../../public/images/assets/monogramaA&V.png";
+import NombreYFecha from "../../public/images/assets/aaron&vale_nombrefecha.PNG";
+import Noscasamos from "../../public/images/assets/NOSACOMPANAS.png";
 // import Hotel from "../assets/ILUSTRACION_HOTEL.PNG";
-import Corazon from "../assets/ILUSTRACION_CORAZON.PNG";
+import Corazon from "../../public/images/assets/ILUSTRACION_CORAZON.PNG";
 import CountDown from "../components/CountDown";
 import CouplePhoto from "../components/CouplePhoto";
 import Itinerary from "../components/Itinerary";

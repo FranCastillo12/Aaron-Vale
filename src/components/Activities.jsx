@@ -1,15 +1,15 @@
 import "../css/Activities.css";
-import Tuktuk from "../assets/images/Activities/tuktuk.png";
-import Hotel from "../assets/images/Activities/Ilustracion_Hotel.png";
-import Oli from "../assets/images/Activities/fun_oli.png";
-import Mesa from "../assets/images/Activities/comidita.png";
-import Baile from "../assets/images/Activities/baile.png";
-import Queque from "../assets/images/Activities/Queque.png";
-import Flecha1 from "../assets/images/Activities/LINEA_ILUSTRACION.png";
-import Flecha2 from "../assets/images/Activities/LINEA_ILUSTRACION02.png";
-import Flecha3 from "../assets/images/Activities/LINEA_ILUSTRACION03.png";
-import Flecha4 from "../assets/images/Activities/LINEA_ILUSTRACION04.png";
-import Flecha5 from "../assets/images/Activities/LINEA_ILUSTRACION05.png";
+import Tuktuk from "../../public/images/Activities/tuktuk.png";
+import Oli from "../../public/images/Activities/fun_oli.png";
+import Mesa from "../../public/images/Activities/comidita.png";
+import Baile from "../../public/images/Activities/baile.png";
+import Queque from "../../public/images/Activities/Queque.png";
+import Flecha1 from "../../public/images/Activities/LINEA_ILUSTRACION.png";
+import Hotel from "../../public/images/Activities/Ilustracion_Hotel.png";
+import Flecha2 from "../../public/images/Activities/LINEA_ILUSTRACION02.png";
+import Flecha3 from "../../public/images/Activities/LINEA_ILUSTRACION03.png";
+import Flecha4 from "../../public/images/Activities/LINEA_ILUSTRACION04.png";
+import Flecha5 from "../../public/images/Activities/LINEA_ILUSTRACION05.png";
 
 
 
