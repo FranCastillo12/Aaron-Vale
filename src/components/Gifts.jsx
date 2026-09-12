@@ -1,6 +1,6 @@
 import "../css/Gifts.css";
 
-import Hotel from "../../public/images/Lodging/ILUSTRACION_HOTEL.png";
+const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.png";
 
 function Lodging() {
   return (

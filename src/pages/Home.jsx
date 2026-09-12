@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import sobreCerrado from "../../public/images/SOBREDERECHO.png"; 
-import sobreAbierto from "../../public/images/SOBREIZQ.PNG";
+const sobreCerrado = "/images/SOBREDERECHO.png"; 
+const sobreAbierto = "/images/SOBREIZQ.PNG";
 import "../css/home.css";
 
 

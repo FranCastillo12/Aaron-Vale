@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../css/Itinerary.css";
-import Itinerario from "../../public/images/LETRAS_ITINERARIOS.png";
-import Ceremonia_Ilustracion from "../../public/images/itinerary/CEREMONIA_ILUSTRACION1.png";
-import Recepcion01 from "../../public/images/TARJETA01_RECEPCION01.png";
+const Itinerario = "/images/LETRAS_ITINERARIOS.png";
+const Ceremonia_Ilustracion = "/images/itinerary/CEREMONIA_ILUSTRACION1.png";
+const Recepcion01 = "/images/TARJETA01_RECEPCION01.png";
 
 function Itinerary() {
   const [VolteaCermonia, setVolteaCermonia] = useState(false);

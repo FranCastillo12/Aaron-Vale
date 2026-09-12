@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "../css/Details.css";
-import Detalles from "../../public/images/LETRAS_DETALLES.png";
-import DressCode1 from "../../public/images/TARJETA02_DRESSCODE.png";
-import DressCode2 from "../../public/images/TARJETA02_FORMAL.png";
-import Notas1 from "../../public/images/TARJETA02_NOTAS.png";
-import Notas2 from "../../public/images/TARJETA02_NOTASSEGUNDACARA.PNG";
-import Velada1 from "../../public/images/TARJETA02_VELADAADULTOS.PNG";
-import Velada2 from "../../public/images/TARJETA02_VELADA02.PNG";
+const Detalles = "/images/LETRAS_DETALLES.png";
+const DressCode1 = "/images/TARJETA02_DRESSCODE.png";
+const DressCode2 = "/images/TARJETA02_FORMAL.png";
+const Notas1 = "/images/TARJETA02_NOTAS.png";
+const Notas2 = "/images/TARJETA02_NOTASSEGUNDACARA.PNG";
+const Velada1 = "/images/TARJETA02_VELADAADULTOS.PNG";
+const Velada2 = "/images/TARJETA02_VELADA02.PNG";
 
 function Details() {
   const [VolteaDressCode, setVolteaDressCode] = useState(false);

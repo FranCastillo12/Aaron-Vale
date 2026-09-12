@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import "../css/Lodging.css";
-import Hotel from "../../public/images/Lodging/ILUSTRACION_HOTEL.png";
-import Tarjeta from "../../public/images/Lodging/tarjeta_hotel.jpg";
+const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.png";
+const Tarjeta = "/images/Lodging/tarjeta_hotel.jpg";
 
 
 

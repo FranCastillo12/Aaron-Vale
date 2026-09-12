@@ -1,15 +1,15 @@
 import "../css/Activities.css";
-import Tuktuk from "../../public/images/Activities/tuktuk.png";
-import Oli from "../../public/images/Activities/fun_oli.png";
-import Mesa from "../../public/images/Activities/comidita.png";
-import Baile from "../../public/images/Activities/baile.png";
-import Queque from "../../public/images/Activities/Queque.png";
-import Flecha1 from "../../public/images/Activities/LINEA_ILUSTRACION.png";
-import Hotel from "../../public/images/Activities/Ilustracion_Hotel.png";
-import Flecha2 from "../../public/images/Activities/LINEA_ILUSTRACION02.png";
-import Flecha3 from "../../public/images/Activities/LINEA_ILUSTRACION03.png";
-import Flecha4 from "../../public/images/Activities/LINEA_ILUSTRACION04.png";
-import Flecha5 from "../../public/images/Activities/LINEA_ILUSTRACION05.png";
+const Tuktuk = "/images/Activities/tuktuk.png";
+const Oli = "/images/Activities/fun_oli.png";
+const Mesa = "/images/Activities/comidita.png";
+const Baile = "/images/Activities/baile.png";
+const Queque = "/images/Activities/Queque.png";
+const Flecha1 = "/images/Activities/LINEA_ILUSTRACION.png";
+const Hotel = "/images/Activities/Ilustracion_Hotel.png";
+const Flecha2 = "/images/Activities/LINEA_ILUSTRACION02.png";
+const Flecha3 = "/images/Activities/LINEA_ILUSTRACION03.png";
+const Flecha4 = "/images/Activities/LINEA_ILUSTRACION04.png";
+const Flecha5 = "/images/Activities/LINEA_ILUSTRACION05.png";
 
 
 

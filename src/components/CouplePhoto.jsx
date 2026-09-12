@@ -1,5 +1,5 @@
 import "../css/CouplePhoto.css";
-import Olivia from "../../public/images/Olivia.jpg";
+const Olivia = "/images/Olivia.jpg";
 
 
 function CouplePhoto() {
