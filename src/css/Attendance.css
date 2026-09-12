@@ -1,0 +1,99 @@
+.invitacion-titulo {
+  font-family: PrimaryFont;
+  color: white;
+  font-size: 30px;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.rsvp-container {
+  position: relative;
+  width: 125%;
+  max-width: 500px; /* antes 400px */
+
+}
+
+.rsvp-borde {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rsvp-contenido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22% 18% 8%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.rsvp-label {
+  font-family: secondaryFont;
+  font-size: 1.4rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  
+}
+
+.rsvp-input {
+  width: 85%;
+  border: 2px solid white;
+  border-radius: 20px;
+  background: #ACC6DE;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.rsvp-select {
+    color: white;
+    font-family: secondaryFont;
+  width: 85%;
+  border: 2px solid white;
+  border-radius: 20px;
+  background: #ACC6DE;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.rsvp-boton {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #6fa3d8;
+  font-family: 'Caveat', cursive;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.1;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.rsvp-boton:hover {
+  transform: scale(1.05);
+}
+
+.rsvp-pareja {
+  width: 45%;
+  height: auto;
+  margin-top: 0.5rem;
+}

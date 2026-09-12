@@ -6,6 +6,8 @@ import Details from "../components/Details";
 import Activities from "../components/Activities";
 import Lodging from "../components/Lodging";
 import Gifts from "../components/Gifts";
+import Attendance from "../components/Attendance";
+
 
 export default function MainContent() {
   return (
@@ -18,6 +20,7 @@ export default function MainContent() {
       <Activities />
       <Lodging />
       <Gifts />
+      <Attendance />
     </>
   );
 }
