@@ -35,6 +35,12 @@
   height: auto;
 }
 
+
+.invitacion-nombre-fecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .nombre-fecha {
   margin-top: -140px;
   width: 105%;

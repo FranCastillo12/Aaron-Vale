@@ -9,7 +9,7 @@
 
 .CouplePhoto {
   width: 100%;
-  max-width: 500px; /* ajusta según qué tan grande quieras la foto */
+  max-width: 350px; /* ajusta según qué tan grande quieras la foto */
   height: auto;
   border-radius: 12px; /* quita esta línea si no quieres bordes redondeados */
   object-fit: cover;

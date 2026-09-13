@@ -1,9 +1,9 @@
 import "../css/Invitation.css";
 const monograma = "/images/monogramaA&V.png";
-const NombreYFecha = "/images/aaron&vale_nombrefecha.PNG";
+const NombreYFecha = "/images/Invitation/aaronvale_nombrefecha.png";
 const Noscasamos = "/images/NOSACOMPANAS.png";
-const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.PNG";
-const Corazon = "/images/ILUSTRACION_CORAZON.PNG";
+const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.png";
+const Corazon = "/images/Invitation/ILUSTRACION_CORAZON.png";
 
 
 
