@@ -1,21 +1,46 @@
 .itinerario-container {
-    width: 100%;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 60px 20px;
   display: flex;
-  flex-direction: column;   /* clave: título arriba, tarjetas abajo */
+  flex-direction: column; /* clave: título arriba, tarjetas abajo */
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1.2s ease forwards;
 }
+
+.Itinerario {
+   margin-top: -60px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-left: auto;   /* centra el bloque horizontalmente */
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centra los elementos hijos (como el título) */
+  text-align: center;
+}
+
+.itinerario-titulo {
+  font-size: 65px;
+  font-family: PrimaryFont;
+  color: #fdfdfe;
+}
+
+
+
+
+
 
 .tarjetas-wrapper {
   display: flex;
-  flex-direction: row;      /* las dos tarjetas en fila */
+  flex-direction: row; /* las dos tarjetas en fila */
   gap: 40px;
-  flex-wrap: wrap;           /* en mobile se acomodan una debajo de otra */
+  flex-wrap: wrap; /* en mobile se acomodan una debajo de otra */
   justify-content: center;
   align-items: flex-start;
 }
-
 
 @keyframes fadeIn {
   from {
@@ -39,16 +64,9 @@
   padding: 0 20px;
 }
 
-.itinerario-titulo {
-  font-size: 48px;
-}
 
-.Itinerario {
-  margin-top: -60px;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
+
+
 
 /* Wrapper para acomodar las dos tarjetas lado a lado */
 .tarjetas-wrapper {
@@ -95,7 +113,8 @@
   position: relative;
   width: 650px;
   height: 650px;
-  background: url(../assets/images/itinerary/Tarjeta.png) center / 100% 100% no-repeat;
+  background: url(../assets/images/itinerary/Tarjeta.png) center / 100% 100%
+    no-repeat;
 }
 
 .texto-tarjeta {
@@ -104,7 +123,7 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: #ACC6DE;
+  color: #acc6de;
   font-family: PrimaryFont;
   font-size: 55px;
   margin: 0;
@@ -126,7 +145,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #ACC6DE;
+  color: #acc6de;
   font-family: PrimaryFont;
   font-size: 32px;
   padding: 20px;
@@ -148,14 +167,14 @@
 }
 
 .texto-tarjeta-atras {
-  color: #ACC6DE;
+  color: #acc6de;
   font-family: PrimaryFont;
   font-size: 55px;
   margin: 0 0 6px 0;
 }
 
 .info-atras {
-  color: #ACC6DE;
+  color: #acc6de;
   font-family: SecondaryFont;
   font-size: 30px;
   align-items: center;
@@ -164,21 +183,21 @@
 .boton-ubicacion {
   width: 30%;
   margin-top: 20px;
-  background-color: #ACC6DE;
+  background-color: #acc6de;
   color: #fff;
   border: none;
   border-radius: 6px;
   font-family: SecondaryFont;
   font-size: 22px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 .boton-ubicacion:hover {
   background-color: #8fb0cf;
   transform: scale(1.05);
 }
-
-
 
 /* ===== RESPONSIVE - TABLET ===== */
 @media (max-width: 900px) {
@@ -210,44 +229,14 @@
   .itinerario-container {
     padding: 0 16px;
   }
+.itinerario-titulo {
+  font-size: 46px;
 
+}
   .Itinerario {
-    max-width: 280px;
-    margin-top: -30px;
+    margin-top: -1px;
   }
 
-  .tarjetas-wrapper {
-    flex-direction: column;   /* apiladas, una debajo de otra */
-    gap: 30px;
-  }
 
-  .flip-container,
-  .tarjeta-contenedor {
-    width: 90vw;               /* ocupa casi todo el ancho de pantalla */
-    height: 90vw;               /* se mantiene cuadrada */
-    max-width: 400px;
-    max-height: 400px;
-  }
 
-  .texto-tarjeta {
-    font-size: 30px;
-    top: 25%;
-  }
-
-  .texto-tarjeta-atras {
-    font-size: 26px;
-  }
-
-  .info-atras {
-    font-size: 16px;
-  }
-
-  .contenido-atras {
-    gap: 8px;
-  }
-
-  .boton-ubicacion {
-    
-    font-size: 10px;
-  }
 }

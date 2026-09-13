@@ -1,11 +1,11 @@
 import "../css/Activities.css";
-const Tuktuk = "/images/Activities/tuktuk.png";
-const Oli = "/images/Activities/fun_oli.png";
-const Mesa = "/images/Activities/comidita.png";
-const Baile = "/images/Activities/baile.png";
-const Queque = "/images/Activities/Queque.png";
+const Tuktuk = "/images/Activities/TUKTUK.png";
+const Oli = "/images/Activities/FUN_OLI.png";
+const Mesa = "/images/Activities/COMIDITA.png";
+const Baile = "/images/Activities/Baile.png";
+const Queque = "/images/Activities/QUEQUE.png";
 const Flecha1 = "/images/Activities/LINEA_ILUSTRACION.png";
-const Hotel = "/images/Activities/Ilustracion_Hotel.png";
+const Hotel = "/images/Activities/ILUSTRACION_HOTEL.png";
 const Flecha2 = "/images/Activities/LINEA_ILUSTRACION02.png";
 const Flecha3 = "/images/Activities/LINEA_ILUSTRACION03.png";
 const Flecha4 = "/images/Activities/LINEA_ILUSTRACION04.png";
@@ -18,7 +18,10 @@ function Activities() {
 return (
 
 <div className="preparamos-container">
-      <h2 className="preparamos-titulo">Lo que preparamos</h2>
+  <div className="preparamos-titulo">
+          <h2 className="preparamos">Lo que preparamos</h2>
+  </div>
+
 
       <div className="preparamos-timeline">
   {/* Paso 1: Tuktuk */}

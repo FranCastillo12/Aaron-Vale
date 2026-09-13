@@ -14,9 +14,11 @@ function Lodging() {
   return (
     <div className="invitacion-container">
 
-      <h1 className="invitacion-titulo">
-        Hospedaje
-      </h1>
+
+  <div className="hospedaje-titulo">
+          <h2 className="hospedaje">Hospedaje</h2>
+  </div>
+ 
 
       <div className="invitacion-Hotel">
 

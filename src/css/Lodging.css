@@ -5,11 +5,23 @@
   align-items: center;
 }
 
-.invitacion-titulo {
+.hospedaje-titulo {
+  font-size: 65px;
   font-family: PrimaryFont;
-  color: white;
-  font-size: 60px;
-  margin: 0 0 30px 0;
+  color: #fdfdfe;
+}
+
+.hospedaje {
+  margin-top: -60px;
+  width: 100%;
+  max-width: 400px;
+    margin-bottom: 0;
+  height: auto;
+  margin-left: auto; /* centra el bloque horizontalmente */
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra los elementos hijos (como el título) */
   text-align: center;
 }
 
@@ -25,11 +37,11 @@
   width: 500px;
   max-width: 90%;
   height: auto;
+   margin-top: -100px;
 }
 
 .boton-hospedaje {
-
-
+  margin-top: -50px;
   font-family: SecondaryFont, sans-serif;
   color: #ACC6DE;
   font-size: 28px;
@@ -183,7 +195,7 @@
   width: 100%;
   max-width: 700px;
   height: 300px;
-  margin: 2rem auto 0;
+  margin: 4rem auto 0;
 }
 
 .foto-polaroid {
@@ -237,4 +249,55 @@
   .foto-2 { left: 90px; top: 5px; }
   .foto-3 { left: 190px; top: 0px; }
   .foto-4 { left: 260px; top: 40px; }
+}
+
+@media (max-width: 500px) {
+  .hospedaje-titulo {
+    font-size: 46px;
+  }
+
+  .hospedaje {
+    margin-top: -1px;
+  }
+
+   .card-titulo {
+    font-size: 1.4rem;
+  }
+
+  .card-texto {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .boton-reservar {
+    font-size: 0.8rem;
+    padding: 0.45rem 1.4rem;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .card-hospedaje {
+    max-width: 560px;
+  }
+
+  .card-titulo {
+    font-size: 2.4rem;
+  }
+
+  .card-texto {
+    font-size: 1.35rem;
+    line-height: 1.6;
+  }
+
+  .boton-reservar {
+    font-size: 1.35rem;
+    padding: 0.7rem 2rem;
+  }
+
+  .cerrar-modal {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }

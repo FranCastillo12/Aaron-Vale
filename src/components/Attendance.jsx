@@ -18,10 +18,9 @@ function Attendance() {
   return (
     <div className="invitacion-container">
 
-      <h1 className="invitacion-titulo">
-    ¿Nos acompañarás?
-      </h1>
-
+   <div className="Attendance-titulo">
+          <h2 className="Attendance"> ¿Nos acompañarás?</h2>
+        </div>
 
 
 

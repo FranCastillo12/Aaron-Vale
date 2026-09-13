@@ -15,3 +15,9 @@
   object-fit: cover;
  
 }
+
+@media (min-width: 768px){
+  .CouplePhoto-container{
+    min-height: 65vh;   /* desktop */
+  }
+}

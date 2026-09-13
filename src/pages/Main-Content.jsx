@@ -9,6 +9,8 @@ import Activities from "../components/Activities";
 import Lodging from "../components/Lodging";
 import Gifts from "../components/Gifts";
 import Attendance from "../components/Attendance";
+import Footer from "../components/Footer";
+
 
 import audio from "../audioManager";
 
@@ -57,6 +59,7 @@ export default function MainContent() {
       <Lodging />
       <Gifts />
       <Attendance />
+      <Footer />
     </>
   );
 }

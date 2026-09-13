@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "../css/Itinerary.css";
-const Itinerario = "/images/LETRAS_ITINERARIOS.png";
 const Ceremonia_Ilustracion = "/images/itinerary/CEREMONIA_ILUSTRACION1.png";
 const Recepcion01 = "/images/TARJETA01_RECEPCION01.png";
 
@@ -11,7 +10,9 @@ function Itinerary() {
   return (
     <div className="itinerario-container">
       <div className="itinerario-titulo">
-        <img src={Itinerario} alt="Itinerario" className="Itinerario" />
+
+         <h2 className="Itinerario">Itinerario</h2>
+        
       </div>
 
       <div className="tarjetas-wrapper">

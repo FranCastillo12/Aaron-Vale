@@ -6,6 +6,28 @@
   text-align: center;
 }
 
+.Attendance-titulo {
+  font-size: 55px;
+  font-family: PrimaryFont;
+  color: #fdfdfe;
+}
+
+.Attendance {
+  margin-top: -60px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-left: auto; /* centra el bloque horizontalmente */
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra los elementos hijos (como el título) */
+  text-align: center;
+}
+
+
+
+
 .rsvp-container {
   position: relative;
   width: 125%;
@@ -96,4 +118,41 @@
   width: 45%;
   height: auto;
   margin-top: 0.5rem;
+}
+
+
+@media (max-width: 500px) {
+  .Attendance-titulo {
+    font-size: 30px;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .rsvp-container {
+    max-width: 850px;
+  }
+
+  .rsvp-label {
+    margin-top:40px;
+    font-size: 1.8rem;
+  }
+
+  .rsvp-input,
+  .rsvp-select {
+    font-size: 1.10rem;
+    padding: 0.7rem 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .rsvp-boton {
+    width: 110px;
+    height: 110px;
+    font-size: 1.1rem;
+  }
+
+  .rsvp-pareja {
+
+  margin-top:120px;
+}
 }
