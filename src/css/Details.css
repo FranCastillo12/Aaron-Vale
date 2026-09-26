@@ -6,11 +6,20 @@
   animation: fadeIn 1.2s ease forwards;
 }
 
-
 .Details-titulo {
   font-size: 65px;
   font-family: PrimaryFont;
   color: #fdfdfe;
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s var(--ease-entrada),
+    transform 0.7s var(--ease-entrada);
+}
+
+.Details-titulo.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .Details {
@@ -27,13 +36,7 @@
 }
 
 
-.flipcard-wrap{
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.flipcard{
+.flipcard {
   position: relative;
   width: min(160vw, 540px);
   aspect-ratio: 1 / 1;
@@ -41,15 +44,15 @@
   cursor: pointer;
 }
 
-.flipcard-face{
+.flipcard-face {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(.6,.05,.28,1);
+  transition: transform 0.7s cubic-bezier(0.6, 0.05, 0.28, 1);
 }
 
-.flipcard-face img{
+.flipcard-face img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -58,32 +61,28 @@
   user-select: none;
 }
 
-.flipcard-front{
+.flipcard-front {
   transform: rotateY(0deg);
 }
 
-.flipcard-back{
+.flipcard-back {
   transform: rotateY(-180deg);
 }
 
-.flipcard.is-flipped .flipcard-front{
+.flipcard.is-flipped .flipcard-front {
   transform: rotateY(180deg);
 }
 
-.flipcard.is-flipped .flipcard-back{
+.flipcard.is-flipped .flipcard-back {
   transform: rotateY(0deg);
 }
 
-.flipcard-grid{
+.flipcard-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
 }
-
-
-
-
 
 
 @media (max-width: 500px) {
@@ -94,4 +93,18 @@
   .Details {
     margin-top: -1px;
   }
+}
+
+
+/* ===== Entrada por scroll: cada tarjeta individual ===== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-entrada),
+              transform 0.7s var(--ease-entrada);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -10,6 +10,7 @@
   font-size: 55px;
   font-family: PrimaryFont;
   color: #fdfdfe;
+   
 }
 
 .Attendance {
@@ -115,6 +116,11 @@
 }
 
 .rsvp-pareja {
+
+
+
+
+
   width: 45%;
   height: auto;
   margin-top: 0.5rem;
@@ -125,10 +131,14 @@
   .Attendance-titulo {
     font-size: 30px;
   }
+
+  
+
 }
 
 
 @media (min-width: 900px) {
+  
   .rsvp-container {
     max-width: 850px;
   }
@@ -155,4 +165,74 @@
 
   margin-top:120px;
 }
+}
+
+/* ===== Entrada por scroll (mismo sistema que las demás partes) ===== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-entrada),
+              transform 0.7s var(--ease-entrada);
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Agrupación de campos (necesario para escalonar label+input juntos) ===== */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ===== Animación de "sello" al enviar ===== */
+@keyframes presionarBoton {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.rsvp-boton.sellando {
+  animation: presionarBoton 0.4s ease-in-out;
+}
+
+@keyframes stampIn {
+  0%   { opacity: 0; transform: scale(1.3) rotate(-10deg); }
+  60%  { opacity: 1; transform: scale(0.95) rotate(-6deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-8deg); }
+}
+
+.sello-confirmacion {
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 3px solid #ACC6DE;
+  border-radius: 10px;
+  color: #ACC6DE;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  animation: stampIn 0.6s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+
+/* ===== Pareja bailando: balanceo leve, sin chocar con la entrada ===== */
+.rsvp-pareja-wrap {
+  
+
+  margin-top: -100px;
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;   /* <- agrega esta línea */
+}
+@keyframes wobblePareja {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+.rsvp-pareja {
+  animation: wobblePareja 4.5s ease-in-out infinite;
 }

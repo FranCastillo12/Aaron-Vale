@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../css/MainContent.css";
 import Hero from "../components/Hero";
-import CountDown from "../components/CountDown";
+
 import CouplePhoto from "../components/CouplePhoto";
 import Itinerary from "../components/Itinerary";
 import Details from "../components/Details";
@@ -51,7 +51,6 @@ export default function MainContent() {
 
 
       <Hero />
-      <CountDown fecha="2027-01-16T13:00:00" />
       <CouplePhoto />
       <Itinerary />
       <Details />

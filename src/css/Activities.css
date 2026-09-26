@@ -183,3 +183,38 @@
     font-size: 36px;
   }
 }
+
+/* ===== Entrada por scroll (usa el mismo sistema que Details) ===== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-entrada),
+              transform 0.7s var(--ease-entrada);
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Loop: balanceo leve lado a lado (izq y der por separado,
+   porque cada uno ya tiene una rotación base distinta -6deg/6deg
+   que hay que conservar dentro del keyframe) ===== */
+@keyframes wobbleIzq {
+  0%, 100% { transform: rotate(-6deg) translateX(0); }
+  50%      { transform: rotate(-6deg) translateX(4px); }
+}
+@keyframes wobbleDer {
+  0%, 100% { transform: rotate(6deg) translateX(0); }
+  50%      { transform: rotate(6deg) translateX(-4px); }
+}
+
+.paso-icono-izq .paso-icono { animation: wobbleIzq 5s ease-in-out infinite; }
+.paso-icono-der .paso-icono { animation: wobbleDer 5s ease-in-out infinite; }
+
+/* Desincronización: cada ilustración empieza su loop en un momento distinto */
+.icono-tuktuk { animation-delay: 0s; }
+.icono-hotel  { animation-delay: 0.8s; }
+.icono-oli    { animation-delay: 1.6s; }
+.icono-mesa   { animation-delay: 2.4s; }
+.icono-baile  { animation-delay: 3.2s; }
+.icono-queque { animation-delay: 4s; }

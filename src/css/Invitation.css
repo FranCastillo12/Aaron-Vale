@@ -1,22 +1,14 @@
+/* === Curva de easing global para entradas === */
+:root{
+  --ease-entrada: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 .invitacion-container {
   min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .invitacion-card {
@@ -30,12 +22,36 @@
   padding: 0 20px;
 }
 
+/* ===== Keyframes de entrada ===== */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Loops continuos ===== */
+@keyframes floatSuave {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+@keyframes rockCorazon {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+/* ===== Monograma: fade + escala ===== */
 .monograma {
   width: 200px;
   height: auto;
+  animation: fadeInScale 0.8s var(--ease-entrada) both;
 }
 
-
+/* ===== Nombre y fecha: fade + subida, 0.2s después del monograma ===== */
 .invitacion-nombre-fecha {
   display: flex;
   justify-content: center;
@@ -46,41 +62,65 @@
   width: 105%;
   max-width: 450px;
   height: auto;
+  animation: fadeInUp 0.6s var(--ease-entrada) 0.2s both;
 }
 
-.noscasamos {
-  margin-top: -280px;
-  width: 120%;
-  max-width: 350px;
-  height: auto;
+/* ===== "¿Nos acompañarás?" ===== */
+.acompanas-text {
+  font-family: 'PrimaryFont', sans-serif;
+  color: #ffffff;
+  font-size: 26px;
+  margin-top: -120px;
+  animation: fadeInUp 0.6s var(--ease-entrada) 0.4s both;
 }
 
+/* ===== Ilustración del hotel: entrada + loop flotante ===== */
 .hotel {
-  margin-top: -250px;
+  margin-top: -70px;
   width: 100%;
   max-width: 400px;
   height: auto;
+  animation:
+    fadeInUp 0.7s var(--ease-entrada) 0.6s both,
+    floatSuave 6s ease-in-out 1.3s infinite;
 }
 
+/* ===== "¡Nos casamos!" (antes sin usar en el JSX) ===== */
+.noscasamos {
+  margin-top: -40px;
+  width: 120%;
+  max-width: 350px;
+  height: auto;
+  animation: fadeInUp 0.6s var(--ease-entrada) 0.8s both;
+}
+
+/* ===== Texto de invitación ===== */
 .invitacion-text {
   font-family: 'SecondaryFont', sans-serif;
   color: #ffffff;
   font-size: 26px;
   margin-top: -40px;
+  animation: fadeInUp 0.6s var(--ease-entrada) 1s both;
 }
 
+/* ===== Pareja con corazón: entrada + balanceo opcional ===== */
 .corazon {
   margin-top: -30px;
   width: 100%;
   max-width: 400px;
   height: auto;
+  animation:
+    fadeInUp 0.6s var(--ease-entrada) 1.2s both,
+    rockCorazon 4s ease-in-out 1.8s infinite;
 }
 
+/* ===== Contador ===== */
 .countdown {
   display: flex;
   gap: 20px;
   margin-top: 10px;
   justify-content: center;
+  animation: fadeInUp 0.6s var(--ease-entrada) 1.4s both;
 }
 
 .countdown-item:first-child .countdown-numero {
@@ -96,16 +136,34 @@
   min-width: 60px;
 }
 
+.countdown-numero-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 40px;  
+   padding: 0 4px;    /* alto fijo, calculado para el número de 32px */
+  position: relative;
+}
+
 .countdown-numero {
+  display: inline-block;
   font-family: 'SecondaryFont', sans-serif;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
+  line-height: 60px; /* coincide con el alto del wrap, para centrar verticalmente */
   color: #ffffff;
+  animation: digitoIn 1.4s var(--ease-entrada);
+}
+
+@keyframes digitoIn {
+  from { opacity: 0; transform: translateY(-60%); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .countdown-label {
   font-family: 'SecondaryFont', sans-serif;
-  font-size: 12px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #ffffff;
@@ -114,5 +172,15 @@
 @media (max-width: 480px) {
   .invitacion-card {
     padding: 0 15px;
+  }
+}
+
+/* ===== Accesibilidad: respeta "reducir movimiento" del sistema ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

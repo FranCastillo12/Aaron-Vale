@@ -4,7 +4,7 @@ import "../css/Lodging.css";
 const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.png";
 const Tarjeta = "/images/Lodging/tarjeta_hotel.jpg";
 
-
+import RevealItem from "../components/RevealItem";
 
 
 function Lodging() {
@@ -14,30 +14,39 @@ function Lodging() {
   return (
     <div className="invitacion-container">
 
-
+<RevealItem>
   <div className="hospedaje-titulo">
           <h2 className="hospedaje">Hospedaje</h2>
   </div>
- 
+ </RevealItem>
 
       <div className="invitacion-Hotel">
 
-        <img
-          src={Hotel}
-          alt="Hotel"
-          className="hoteel"
-        />
+    <RevealItem delay={0.2}>
+  <img src={Hotel} alt="Hotel" className="hoteel" />
+</RevealItem>
 
-        <button className="boton-hospedaje" onClick={() => setMostrarTarjeta(true)}>
-          Ver más
-        </button>
 
-        <div className="fotos-collage">
-          <img  alt="Foto 1" className="foto-polaroid foto-1" />
-          <img  alt="Foto 2" className="foto-polaroid foto-2" />
-          <img  alt="Foto 3" className="foto-polaroid foto-3" />
-          <img  alt="Foto 4" className="foto-polaroid foto-4" />
-        </div>
+<RevealItem delay={0.35}>
+  <button className="boton-hospedaje" onClick={() => setMostrarTarjeta(true)}>
+    Ver más
+  </button>
+</RevealItem>
+
+     <div className="fotos-collage">
+  <RevealItem delay={0}>
+    <img  className="foto-polaroid foto-1" />
+  </RevealItem>
+  <RevealItem delay={0.15}>
+    <img  alt="Foto 2" className="foto-polaroid foto-2" />
+  </RevealItem>
+  <RevealItem delay={0.3}>
+    <img  alt="Foto 3" className="foto-polaroid foto-3" />
+  </RevealItem>
+  <RevealItem delay={0.45}>
+    <img  alt="Foto 4" className="foto-polaroid foto-4" />
+  </RevealItem>
+</div>
 
       </div>
 

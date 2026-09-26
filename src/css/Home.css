@@ -1,3 +1,7 @@
+:root{
+  --ease: cubic-bezier(.65, 0, .35, 1);
+}
+
 .home-container{
   position: relative;
   width: 100vw;
@@ -9,15 +13,30 @@
   justify-content: center;
   background: radial-gradient(120% 90% at 50% 12%, #FBF8F4 0%, #F6F2ED 45%, #EFE9E1 100%);
   overflow: hidden;
+  perspective: 1800px;
+
+  opacity: 1;
+  transition: opacity 1.1s var(--ease);
+}
+
+.home-container.fading{
+  opacity: 0;
 }
 
 .envelope{
   position: relative;
-  width: clamp(260px, 45vh, 420px);   /* se basa en la ALTURA de pantalla, no en el ancho */
-  aspect-ratio: 675 / 1200;            /* recuperamos la proporción real de la imagen */
+  width: min(95vw, calc(95vh * 675 / 1200));
+  height: auto;
+  aspect-ratio: 675 / 1200;
   cursor: pointer;
-  perspective: 1800px;
   filter: drop-shadow(0 18px 34px rgba(50,40,30,.22));
+
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+  transition: opacity 1.1s var(--ease),
+              transform 1.1s var(--ease),
+              visibility 1.1s;
 }
 
 .envelope img{
@@ -26,7 +45,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* ya no necesitamos "cover" porque respetamos la proporción original */
+  object-fit: contain;
   display: block;
   pointer-events: none;
   user-select: none;
@@ -39,17 +58,15 @@
 }
 
 .flap-layer{
-  transform-origin: 100% 50%;
-  transform: rotateY(0deg) translateZ(0);
-  opacity: 1;
-  transition: transform 2.4s cubic-bezier(.6,.05,.28,1),
-              opacity 2.4s ease-in 1s;
-  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.envelope.open .flap-layer{
-  transform: rotateY(115deg) translateZ(2px);
+.envelope.open{
   opacity: 0;
+  transform: scale(1.12);
+  visibility: hidden;
 }
 
 .hint{

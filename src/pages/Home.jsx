@@ -14,21 +14,19 @@ function Home() {
     
 
      const handleClick = () => {
-    if (abierto) return; // evita doble click mientras anima
-    setAbierto(true);
-audio.play().catch(() => {});
-    // Espera a que termine la animación antes de cambiar de página
-    setTimeout(() => {
-      navigate("/Main-Content"); // Cambia a la ruta de tu página de invitación
-    }, 2500); // debe ser >= tiempo de la animación CSS (.95s) + un margen
-  };
+  if (abierto) return;
+  setAbierto(true);
+  audio.play().catch(() => {});
+  setTimeout(() => {
+    navigate("/Main-Content");
+  }, 1150); // coincide con la duración de la transición (1.1s) + un pelín de margen
+};
 
 
 
 
-
-  return (
-    <div className="home-container">
+return (
+    <div className={`home-container ${abierto ? "fading" : ""}`}>
       <div
         className={`envelope ${abierto ? "open" : ""}`}
         onClick={handleClick}
