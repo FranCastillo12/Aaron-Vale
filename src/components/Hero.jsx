@@ -23,7 +23,7 @@ function Hero() {
         </div>
 
         <div className="acompanas-text">
-          <p>¿Nos acompañarás?</p>
+          <p>¡Nos casamos!</p>
         </div>
 
         <div className="invitacion-Hotel">
