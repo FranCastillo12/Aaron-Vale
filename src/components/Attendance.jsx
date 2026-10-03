@@ -31,7 +31,7 @@ function Attendance() {
         </RevealItem>
 
         <div className="rsvp-contenido">
-          <RevealItem delay={0.3}>
+         
             <div className="campo-grupo">
               <label className="rsvp-label">Nombre Completo</label>
               <input
@@ -41,9 +41,9 @@ function Attendance() {
                 onChange={(e) => setNombre(e.target.value)}
               />
             </div>
-          </RevealItem>
+         
 
-          <RevealItem delay={0.45}>
+         
             <div className="campo-grupo">
               <label className="rsvp-label">Asistencia</label>
               <select
@@ -56,9 +56,9 @@ function Attendance() {
                 <option value="no">No podré asistir</option>
               </select>
             </div>
-          </RevealItem>
+          
 
-          <RevealItem delay={0.6}>
+         
             <button
               className={`rsvp-boton ${sellado ? "sellando" : ""}`}
               onClick={handleSubmit}
@@ -67,7 +67,7 @@ function Attendance() {
               <br />
               respuesta
             </button>
-          </RevealItem>
+         
 
           {sellado && (
             <div className="sello-confirmacion">

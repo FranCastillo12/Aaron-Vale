@@ -1,81 +1,112 @@
 import { useState } from "react";
 import "../css/Itinerary.css";
-const Ceremonia_Ilustracion = "/images/itinerary/CEREMONIA_ILUSTRACION1.png";
-const Recepcion01 = "/images/TARJETA01_RECEPCION01.png";
 
+const Tarjeta = "/images/itinerary/Tarjeta.png";
+const Ceremonia = "/images/itinerary/CEREMONIA.png";
+const Recepcion = "/images/itinerary/RECEPCION.png";
+import { useScrollReveal } from "../hooks/useScrollReveal";
+import RevealItem from "../components/RevealItem";
 function Itinerary() {
-  const [VolteaCermonia, setVolteaCermonia] = useState(false);
-  const [VolteaRecepcion, setVolteaRecepcion] = useState(false);
+  const { ref: tituloRef, visible: tituloVisible } = useScrollReveal();
+  const [flipped1, setFlipped1] = useState(false);
+  const [flipped2, setFlipped2] = useState(false);
 
   return (
-    <div className="itinerario-container">
-      <div className="itinerario-titulo">
-
-         <h2 className="Itinerario">Itinerario</h2>
-        
+    <section className="itinerary">
+      <div
+        ref={tituloRef}
+        className={`itinerary-titulo ${tituloVisible ? "is-visible" : ""}`}
+      >
+        <h2 className="Details">Itinerario</h2>
       </div>
 
-      <div className="tarjetas-wrapper">
-        {/* Tarjeta Ceremonia con flip */}
-        <div
-          className="flip-container"
-          onClick={() => setVolteaCermonia(!VolteaCermonia)}
-        >
-          <div className={`flip-card ${VolteaCermonia ? "volteada" : ""}`}>
-            {/* Cara frontal */}
-            <div className="cara cara-frente">
-              <div className="tarjeta-contenedor">
-                <h1 className="texto-tarjeta">Ceremonia</h1>
-                <img
-                  src={Ceremonia_Ilustracion}
-                  alt="Ilustración ceremonia"
-                  className="ilustracion"
-                />
+      <div className="itinerary-row">
+        {/* ================= TARJETA 1: CEREMONIA ================= */}
+        <div className="reception-container">
+          <div
+            className={`flip-card ${flipped1 ? "is-flipped" : ""}`}
+            onClick={() => setFlipped1((f) => !f)}
+            onKeyDown={(e) =>
+              (e.key === "Enter" || e.key === " ") && setFlipped1((f) => !f)
+            }
+            role="button"
+            tabIndex={0}
+            aria-label="Ceremonia. Toca para ver más información"
+          >
+            <div className="flip-inner">
+              {/* FRENTE */}
+              <div className="flip-face flip-front">
+                <img src={Tarjeta} alt="" className="card-bg" />
+                <div className="card-content">
+                  <h2 className="card-title">Ceremonia</h2>
+                  <img
+                    src={Ceremonia}
+                    alt=""
+                    className="card-illustration"
+                    style={{ "--img-width": "110%", "--img-top": "14%" }}
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Cara trasera */}
-            <div className="cara cara-atras">
-              <div className="tarjeta-contenedor">
-                <div className="contenido-atras">
-                  <h1 className="texto-tarjeta-atras">Ceremonia</h1>
-                  <p className="info-atras">1:00pm</p>
-                  <p className="info-atras">Hotel Marriot</p>
-                  <p className="info-atras">Hacienda Belén</p>
+              {/* REVERSO */}
+              <div className="flip-face flip-back">
+                <img src={Tarjeta} alt="" className="card-bg" />
+                <div className="card-content">
+                  <h2 className="card-title">Ceremonia</h2>
+                  <p className="card-info">1:00 pm</p>
+                  <p className="card-info">Hotel Marriott</p>
+                  <p className="card-info">Hacienda Belén</p>
 
-                  <button className="boton-ubicacion">Ir a ubicación</button>
+                  <a
+                    className="card-button"
+                    href="https://maps.app.goo.gl/NKnF6urh4EkAgnz46"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Ir a ubicación
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Tarjeta Recepción con flip */}
-        <div
-          className="flip-container"
-          onClick={() => setVolteaRecepcion(!VolteaRecepcion)}
-        >
-          <div className={`flip-card ${VolteaRecepcion ? "volteada" : ""}`}>
-            {/* Cara frontal */}
-            <div className="cara cara-frente">
-              <div className="tarjeta-contenedor">
-                <h1 className="texto-tarjeta">Recepción</h1>
-                <img
-                  src={Recepcion01}
-                  alt="Ilustración recepción"
-                  className="ilustracion"
-                />
+        {/* ================= TARJETA 2: RECEPCIÓN ================= */}
+        <div className="reception-container">
+          <div
+            className={`flip-card ${flipped2 ? "is-flipped" : ""}`}
+            onClick={() => setFlipped2((f) => !f)}
+            onKeyDown={(e) =>
+              (e.key === "Enter" || e.key === " ") && setFlipped2((f) => !f)
+            }
+            role="button"
+            tabIndex={0}
+            aria-label="Recepción. Toca para ver más información"
+          >
+            <div className="flip-inner">
+              {/* FRENTE */}
+              <div className="flip-face flip-front">
+                <img src={Tarjeta} alt="" className="card-bg" />
+                <div className="card-content">
+                  <h2 className="card-title">Recepción</h2>
+                  <img
+                    src={Recepcion}
+                    alt=""
+                    className="card-illustration-reception"
+                    style={{ "--img-width": "80%", "--img-top": "15%" }}
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Cara trasera */}
-            <div className="cara cara-atras">
-              <div className="tarjeta-contenedor">
-                <div className="contenido-atras">
-                  <h1 className="texto-tarjeta-atras">Recepción</h1>
-                  <p className="info-atras">Al concluir la ceremonia.</p>
-                  <p style={{ textAlign: "center" }} className="info-atras">
-                    Cocktail, comida y fiesta en el <br /> mismo lugar.
+              {/* REVERSO */}
+              <div className="flip-face flip-back">
+                <img src={Tarjeta} alt="" className="card-bg" />
+                <div className="card-content">
+                  <h2 className="card-title">Recepción</h2>
+                  <p className="card-info">Al concluir la ceremonia</p>
+                  <p className="card-info">
+                    Cocktail, comida y fiesta en el <br /> mismo lugar
                   </p>
                 </div>
               </div>
@@ -83,7 +114,7 @@ function Itinerary() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

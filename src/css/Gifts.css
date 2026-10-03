@@ -1,16 +1,33 @@
-.invitacion-container {
+.gifts-container {
   width: 100%;
   display: flex;
+  flex-direction: column;   /* título arriba, imagen abajo */
   justify-content: center;
   align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-.invitacion-titulo {
+.gifts-titulo {
   font-family: PrimaryFont;
-  color: white;
+  color: #fdfdfe;
   font-size: 60px;
   margin: 0 0 30px 0;
   text-align: center;
 }
 
+.gifts-imagen {
+  margin-top: -50px;
+  display: block;
+  width: 115%;
+  max-width: 480px;         /* tamaño de la imagen: ajústalo */
+  height: auto;
+}
 
+@media (max-width: 500px) {
+  .gifts-titulo { font-size: 46px; }
+}
+
+@media (min-width: 900px) {
+  .gifts-imagen { max-width: 640px; }
+}

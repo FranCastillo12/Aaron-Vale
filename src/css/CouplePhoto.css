@@ -1,14 +1,15 @@
 .CouplePhoto-container {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: -3px;
+  padding: 16px;              /* evita que la foto pegue con los bordes del celular */
+  box-sizing: border-box;
 }
 
 .CouplePhoto-wrap {
-  width: 100%;
-  max-width: 350px;
+  width: min(100%, 520px);    /* antes max-width: 350px. Súbelo a tu gusto */
+  margin: 0 auto;
 
   opacity: 0;
   transform: translateY(28px);
@@ -22,8 +23,9 @@
 }
 
 .CouplePhoto {
-  width: 100%;
+  width: 100%;                /* siempre 100% del contenedor, no un valor fijo */
   height: auto;
+  max-height: 90vh;           /* si la foto es vertical, que no se salga de la pantalla */
   border-radius: 12px;
   object-fit: cover;
   display: block;
@@ -32,5 +34,8 @@
 @media (min-width: 768px) {
   .CouplePhoto-container {
     min-height: 65vh;
+  }
+  .CouplePhoto-wrap {
+    width: min(100%, 640px);  /* más grande en escritorio */
   }
 }

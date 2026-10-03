@@ -3,13 +3,6 @@ import "../css/Details.css";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import RevealItem from "../components/RevealItem";
 
-const DressCode1 = "/images/TARJETA02_DRESSCODE.png";
-const DressCode2 = "/images/TARJETA02_FORMAL.png";
-const Notas1 = "/images/TARJETA02_NOTAS.png";
-const Notas2 = "/images/TARJETA02_NOTASSEGUNDACARA.PNG";
-const Velada1 = "/images/TARJETA02_VELADAADULTOS.PNG";
-const Velada2 = "/images/TARJETA02_VELADA02.PNG";
-
 const tarjetas = [
   {
     id: "Dresscode",
@@ -30,9 +23,12 @@ const tarjetas = [
 
 function Details() {
   const { ref: tituloRef, visible: tituloVisible } = useScrollReveal();
-  const { ref: gridRef, visible: gridVisible } = useScrollReveal();
 
-  const [flippedId, setFlippedId] = useState(null);
+  // Un objeto con el estado de cada tarjeta: { Dresscode: true, gift: false, ... }
+  const [flipped, setFlipped] = useState({});
+
+  const toggle = (id) =>
+    setFlipped((prev) => ({ ...prev, [id]: !prev[id] }));
 
   return (
     <div className="Details-container">
@@ -45,28 +41,30 @@ function Details() {
         </div>
 
         <div className="flipcard-grid">
-  {tarjetas.map((t, index) => (
-    <RevealItem key={t.id} delay={index * 0.15}>
-      <div className="flipcard-wrap">
-        <div
-          className={`flipcard ${flippedId === t.id ? "is-flipped" : ""}`}
-          onMouseEnter={() => setFlippedId(t.id)}
-          onMouseLeave={() => setFlippedId(null)}
-          onClick={() =>
-            setFlippedId((current) => (current === t.id ? null : t.id))
-          }
-        >
-          <div className="flipcard-face flipcard-front">
-            <img src={t.notas} alt="Notas" />
-          </div>
-          <div className="flipcard-face flipcard-back">
-            <img src={t.info} alt="Información" />
-          </div>
+          {tarjetas.map((t, index) => (
+            <RevealItem key={t.id} delay={index * 0.15}>
+              <div className="flipcard-wrap">
+                <div
+                  className={`flipcard ${flipped[t.id] ? "is-flipped" : ""}`}
+                  onClick={() => toggle(t.id)}
+                  onKeyDown={(e) =>
+                    (e.key === "Enter" || e.key === " ") && toggle(t.id)
+                  }
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Toca para ver más información"
+                >
+                  <div className="flipcard-face flipcard-front">
+                    <img src={t.notas} alt="" />
+                  </div>
+                  <div className="flipcard-face flipcard-back">
+                    <img src={t.info} alt="" />
+                  </div>
+                </div>
+              </div>
+            </RevealItem>
+          ))}
         </div>
-      </div>
-    </RevealItem>
-  ))}
-</div>
       </div>
     </div>
   );

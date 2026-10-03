@@ -11,6 +11,13 @@
   color: #fdfdfe;
 }
 
+.hotel-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .hospedaje {
   margin-top: -60px;
   width: 100%;
@@ -182,11 +189,15 @@
 
 
 .fotos-collage {
+  --s: 1;                       /* escala del collage */
   position: relative;
-  width: 100%;
-  max-width: 700px;
+  width: 700px;                 /* ancho "de diseño" del grupo */
   height: 300px;
-  margin: 4rem auto 0;
+  left: 50%;
+  margin: 4rem 0 0 -350px;      /* -350px = mitad del ancho: centra el grupo */
+  transform-origin: top center;
+  scale: var(--s);
+  margin-bottom: calc(300px * (var(--s) - 1));  /* quita el hueco al achicar */
 }
 
 .foto-polaroid {

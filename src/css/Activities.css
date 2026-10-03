@@ -5,6 +5,7 @@
   padding: 40px 20px;
   color: #fff;
   text-align: center;
+  --flecha-scale: 0.7;
 }
 
 .preparamos-titulo {
@@ -30,13 +31,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 5px
 }
 
 .paso {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 5px;
 }
 
 .paso-icono-izq {
@@ -48,7 +50,7 @@
 }
 
 .paso-icono {
-  width: 150px;
+  width: 170px;
   height: auto;
 }
 
@@ -91,31 +93,33 @@
   height: auto;
   z-index: 1;
   pointer-events: none;
+  transform-origin: center top;   /* se encoge hacia el icono de arriba */
+  scale: var(--flecha-scale); 
 }
 
 .flecha-1 {
-  bottom: -205px;
-  right: -55px;
-  transform: rotate(5deg);
+  bottom: -254px;
+  right: -66px;
+  transform: rotate(9deg);
 }
 
 .flecha-2 {
-  bottom: -175px;
-  left: 5px;
+  bottom: -247px;
+  left: 15px;
 }
 
 .flecha-3 {
-  bottom: -210px;
-  right: -70px;
+  bottom: -269px;
+  right: -57px;
 }
 
 .flecha-4 {
-  bottom: -210px;
-  left: -7px;
+  bottom: -267px;
+  left: 26px;
 }
 
 .flecha-5 {
-  bottom: -210px;
+  bottom: -268px;
   right: -25px;
 }
 

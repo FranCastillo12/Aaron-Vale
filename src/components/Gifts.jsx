@@ -1,19 +1,24 @@
 import "../css/Gifts.css";
+import RevealItem from "../components/RevealItem";
 
-const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.png";
+const Regalos = "/images/Attendance/MESAREGALOS_detalle.png";   // cambia por la ruta real de tu imagen
 
-function Lodging() {
+function Gifts() {
   return (
-    <div className="invitacion-container">
+    <div className="gifts-container">
+      <RevealItem>
+        <h2 className="gifts-titulo">Mesa de regalos</h2>
+      </RevealItem>
 
-      <h1 className="invitacion-titulo">
-        Mesa de regalos
-      </h1>
-
-  
-
+      <RevealItem delay={0.2}>
+        <img
+          src={Regalos}
+          alt="Información de la mesa de regalos"
+          className="gifts-imagen"
+        />
+      </RevealItem>
     </div>
   );
 }
 
-export default Lodging;
+export default Gifts;

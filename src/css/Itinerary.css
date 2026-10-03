@@ -1,242 +1,212 @@
-.itinerario-container {
+/* ============ Variables ============ */
+.itinerary {
+  --blue: #acc6de;
+  --card-size: min(130vw, 760px);
+  --flip-speed: 0.8s;
+  --flip-ease: cubic-bezier(.65, 0, .35, 1);
+
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column; /* clave: título arriba, tarjetas abajo */
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  
+
+
 }
 
-.Itinerario {
-   margin-top: -60px;
+/* ============ Título ============ */
+.itinerary-titulo {
+  padding-top: 60px;            /* espacio para que no choque con lo de arriba */
+  font-family: PrimaryFont;
+  font-size: 65px;
+  color: #fdfdfe;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-entrada),
+              transform 0.7s var(--ease-entrada);
+}
+
+.itinerary-titulo.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.itinerary-heading {
+  margin: 0;                    /* sin margen negativo */
+}
+
+.Details {
   width: 100%;
   max-width: 400px;
-  height: auto;
-  margin-left: auto;   /* centra el bloque horizontalmente */
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* centra los elementos hijos (como el título) */
+  margin: -60px auto 0;
   text-align: center;
 }
 
-.itinerario-titulo {
-  font-size: 65px;
-  font-family: PrimaryFont;
-  color: #fdfdfe;
-}
-
-
-
-
-
-
-.tarjetas-wrapper {
-  display: flex;
-  flex-direction: row; /* las dos tarjetas en fila */
-  gap: 40px;
-  flex-wrap: wrap; /* en mobile se acomodan una debajo de otra */
-  justify-content: center;
-  align-items: flex-start;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.itinerario-card {
+/* ============ Fila de tarjetas ============ */
+/* Celular: una debajo de otra */
+.itinerary-row {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.reception-container {
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 1100px; /* subí esto para que quepan tarjetas más grandes en desktop */
-  padding: 0 20px;
+  overflow: hidden;
 }
 
-
-
-
-
-/* Wrapper para acomodar las dos tarjetas lado a lado */
-.tarjetas-wrapper {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap; /* en mobile se acomodan una debajo de otra */
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* ===== FLIP CARD ===== */
-.flip-container {
-  width: 650px;
-  height: 650px;
-  perspective: 1500px;
-  cursor: pointer;
-}
-
+/* ============ Tarjeta y giro ============ */
 .flip-card {
+  width: var(--card-size);
+  aspect-ratio: 1 / 1;
+  perspective: 1400px;
+  cursor: pointer;
+  flex-shrink: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.flip-card:focus-visible .flip-inner {
+  filter: drop-shadow(0 0 6px rgba(111, 143, 181, 0.6));
+}
+
+.flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
   transform-style: preserve-3d;
+  transition: transform var(--flip-speed) var(--flip-ease);
 }
 
-.flip-card.volteada {
+.flip-card.is-flipped .flip-inner {
   transform: rotateY(180deg);
 }
 
-.cara {
+.flip-face {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.cara-atras {
+.flip-back {
   transform: rotateY(180deg);
 }
 
-/* ===== TARJETA (cada cara) ===== */
-.tarjeta-contenedor {
-  position: relative;
-  width: 650px;
-  height: 650px;
-  background: url(../assets/images/itinerary/Tarjeta.png) center / 100% 100%
-    no-repeat;
+.card-bg {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 98%;
+  height: 98%;
+  transform: translate(-50%, -50%);   /* centra el fondo */
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
-.texto-tarjeta {
+/* ============ Contenido ============ */
+.card-content {
   position: absolute;
-  top: 25%;
+  inset: 15% 24%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  color: var(--blue);
+}
+
+.card-title {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  margin: 86px 0 0;
+  font-family: PrimaryFont;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: 0.18em;
+  color: var(--blue);
+}
+
+/* Frente: tamaño y posición se controlan desde el JSX con --img-width y --img-top */
+.card-illustration {
+  position: absolute;
+  top: var(--img-top, 0);
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-  color: #acc6de;
-  font-family: PrimaryFont;
-  font-size: 55px;
-  margin: 0;
-  z-index: 2;
-}
-
-.ilustracion {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 54%;
+  width: var(--img-width, 120%);
+  max-width: none;
   height: auto;
+  pointer-events: none;
 }
 
-.texto-atras {
+/* Frente: tamaño y posición se controlan desde el JSX con --img-width y --img-top */
+.card-illustration-reception {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #acc6de;
-  font-family: PrimaryFont;
-  font-size: 32px;
-  padding: 20px;
-  margin: 0;
-  z-index: 2;
-}
-
-.contenido-atras {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  transform: translateX(-50%);
   width: 75%;
-  z-index: 2;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
 }
 
-.texto-tarjeta-atras {
-  color: #acc6de;
-  font-family: PrimaryFont;
-  font-size: 55px;
-  margin: 0 0 6px 0;
+/* Reverso */
+.flip-back .card-content {
+  padding-top: 18%;
+  justify-content: center;
+  gap: 10px;
 }
 
-.info-atras {
-  color: #acc6de;
-  font-family: SecondaryFont;
-  font-size: 30px;
-  align-items: center;
+.card-info {
   margin: 0;
-}
-.boton-ubicacion {
-  width: 30%;
-  margin-top: 20px;
-  background-color: #acc6de;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
   font-family: SecondaryFont;
-  font-size: 22px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
-.boton-ubicacion:hover {
-  background-color: #8fb0cf;
-  transform: scale(1.05);
+  font-size: 28px;
+  line-height: 1;
+  color: var(--blue);
 }
 
-/* ===== RESPONSIVE - TABLET ===== */
-@media (max-width: 900px) {
-  .tarjetas-wrapper {
-    gap: 24px;
+.card-button {
+  margin-top: 14px;
+  padding: 10px 26px;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-family: SecondaryFont;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* ============ Escritorio: tarjetas en fila ============ */
+@media (min-width: 900px) {
+  .itinerary-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
   }
 
-  .flip-container,
-  .tarjeta-contenedor {
-    width: 480px;
-    height: 480px;
+  .itinerary-row .reception-container {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
-  .texto-tarjeta {
-    font-size: 42px;
-  }
-
-  .texto-tarjeta-atras {
-    font-size: 34px;
-  }
-
-  .info-atras {
-    font-size: 20px;
+  .itinerary-row .flip-card {
+    width: min(100%, 640px);
   }
 }
 
-/* ===== RESPONSIVE - MOBILE ===== */
 @media (max-width: 500px) {
-  .itinerario-container {
-    padding: 0 16px;
+  .itinerary-titulo {
+   
+    font-size: 46px;
   }
-.itinerario-titulo {
-  font-size: 46px;
-
-}
-  .Itinerario {
-    margin-top: -1px;
-  }
-
-
-
 }
