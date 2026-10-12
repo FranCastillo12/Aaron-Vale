@@ -65,6 +65,8 @@
 }
 
 .rsvp-input {
+  color: white;
+  font-family: secondaryFont;
   width: 85%;
   border: 2px solid white;
   border-radius: 20px;

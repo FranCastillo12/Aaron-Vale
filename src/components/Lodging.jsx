@@ -4,6 +4,11 @@ import "../css/Lodging.css";
 const Hotel = "/images/Lodging/ILUSTRACION_HOTEL.png";
 const Tarjeta = "/images/Lodging/tarjeta_hotel.jpg";
 
+const image1 = "/images/AaronVale/image1.jpeg";
+const image2 = "/images/AaronVale/image2.jpeg";
+const image3 = "/images/AaronVale/image3.jpeg";
+
+
 import RevealItem from "../components/RevealItem";
 
 function Lodging() {
@@ -33,13 +38,13 @@ function Lodging() {
 
         <div className="fotos-collage">
           <RevealItem delay={0}>
-            <img className="foto-polaroid foto-1" />
+            <img src={image3} alt="Foto 1" className="foto-polaroid foto-1" />
           </RevealItem>
           <RevealItem delay={0.15}>
-            <img alt="Foto 2" className="foto-polaroid foto-2" />
+            <img src={image1} alt="Foto 2" className="foto-polaroid foto-2" />
           </RevealItem>
           <RevealItem delay={0.3}>
-            <img alt="Foto 3" className="foto-polaroid foto-3" />
+            <img src={image2} alt="Foto 3" className="foto-polaroid foto-3" />
           </RevealItem>
           <RevealItem delay={0.45}>
             <img alt="Foto 4" className="foto-polaroid foto-4" />
