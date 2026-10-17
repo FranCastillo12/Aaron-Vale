@@ -11,7 +11,7 @@ function Attendance() {
   const { invitado, enviar } = useInvitado();
 
   const yaRespondio = invitado.personas.every(
-    (p) => invitado.respuestas[p] === "si" || invitado.respuestas[p] === "no"
+    (p) => invitado.respuestas[p] === "si" || invitado.respuestas[p] === "no",
   );
 
   const [respuestas, setRespuestas] = useState(invitado.respuestas);
@@ -21,7 +21,7 @@ function Attendance() {
   const [error, setError] = useState("");
 
   const completo = invitado.personas.every(
-    (p) => respuestas[p] === "si" || respuestas[p] === "no"
+    (p) => respuestas[p] === "si" || respuestas[p] === "no",
   );
 
   const cambiar = (persona, valor) => {
@@ -70,7 +70,7 @@ function Attendance() {
         </RevealItem>
 
         <div className="rsvp-contenido">
-          <div className="campo-grupo">
+          {/* <div className="campo-grupo">
             <label className="rsvp-label">Nombre Completo</label>
             <input
               type="text"
@@ -78,15 +78,11 @@ function Attendance() {
               value={invitado.nombres}
               readOnly
             />
-          </div>
+          </div> */}
 
           {invitado.personas.map((persona) => (
             <div className="campo-grupo" key={persona}>
-              <label className="rsvp-label">
-                {invitado.personas.length > 1
-                  ? `Asistencia de ${persona}`
-                  : "Asistencia"}
-              </label>
+              <label className="rsvp-label">Asistencia de {persona}</label>
               <select
                 className="rsvp-select"
                 value={respuestas[persona] || ""}
@@ -109,7 +105,7 @@ function Attendance() {
             onClick={handleSubmit}
             disabled={bloqueado || !completo || guardando}
           >
-                 {guardando ? (
+            {guardando ? (
               "Guardando…"
             ) : sellado ? (
               <>
@@ -125,7 +121,6 @@ function Attendance() {
               </>
             )}
           </button>
-
 
           <RevealItem delay={0.2}>
             <div className="rsvp-pareja-wrap">

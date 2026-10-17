@@ -4,6 +4,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
   useLocation,
   useNavigate,
 } from "react-router-dom";
@@ -53,7 +54,13 @@ function MantenerCodigo() {
 
   return null;
 }
-
+function SoloConSobre({ children }) {
+  let abierto = false;
+  try {
+    abierto = sessionStorage.getItem("sobreAbierto") === "1";
+  } catch {}
+  return abierto ? children : <Navigate to="/" replace />;
+}
 function App() {
   return (
     <InvitadoProvider>
@@ -62,7 +69,14 @@ function App() {
         <Gate>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/nuestra-boda" element={<MainContent />} />
+            <Route
+              path="/nuestra-boda"
+              element={
+                <SoloConSobre>
+                  <MainContent />
+                </SoloConSobre>
+              }
+            />
           </Routes>
         </Gate>
       </BrowserRouter>

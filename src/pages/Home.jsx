@@ -12,14 +12,14 @@ function Home() {
     const navigate = useNavigate();
 
     
-
-     const handleClick = () => {
+const handleClick = () => {
   if (abierto) return;
   setAbierto(true);
+  try { sessionStorage.setItem("sobreAbierto", "1"); } catch {}
   audio.play().catch(() => {});
   setTimeout(() => {
     navigate("/nuestra-boda");
-  }, 1150); // coincide con la duración de la transición (1.1s) + un pelín de margen
+  }, 1150);
 };
 
 
