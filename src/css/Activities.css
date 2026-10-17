@@ -1,23 +1,33 @@
+/* =====================================================================
+   ESCALA PROPORCIONAL
+   --ref = ancho de pantalla (en px) con el que ya te veía bien el diseño.
+   Todo en esta sección se multiplica por --k, así que se ve igual
+   en cualquier teléfono, solo más grande o más pequeño.
+   ===================================================================== */
 .preparamos-container {
+  --ref: 390;
+  --k: calc(min(100vw, 500px) / var(--ref));
+  --flecha-scale: 0.7;
+
+  box-sizing: border-box;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: calc(40 * var(--k)) calc(20 * var(--k));
   color: #fff;
   text-align: center;
-  --flecha-scale: 0.7;
 }
 
 .preparamos-titulo {
-  font-size: 55px;
+  font-size: calc(36 * var(--k));
   font-family: PrimaryFont;
   color: #fdfdfe;
 }
 
 .preparamos {
-  margin-top: -60px;
+  margin-top: calc(-60 * var(--k));
   width: 100%;
-  max-width: 400px;
+  max-width: calc(400 * var(--k));
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -31,14 +41,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5px
+  gap: calc(5 * var(--k));
 }
 
 .paso {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: calc(5 * var(--k));
 }
 
 .paso-icono-izq {
@@ -50,7 +60,7 @@
 }
 
 .paso-icono {
-  width: 170px;
+  width: calc(170 * var(--k));
   height: auto;
 }
 
@@ -67,72 +77,73 @@
 }
 
 .paso-icono-izq .paso-texto {
-  margin-left: 20px;
+  margin-left: calc(20 * var(--k));
 }
 
 .paso-icono-der .paso-texto {
-  margin-right: 20px;
+  margin-right: calc(20 * var(--k));
 }
 
 .paso-hora {
   font-family: PrimaryFont;
-  font-size: 18px;
+  font-size: calc(18 * var(--k));
   margin: 0;
 }
 
 .paso-titulo {
   font-family: PrimaryFont;
-  font-size: 24px;
+  font-size: calc(24 * var(--k));
   margin: 0;
 }
 
 /* ===== FLECHAS ===== */
 .flecha {
   position: absolute;
-  width: 400px;
+  width: calc(400 * var(--k));
   height: auto;
   z-index: 1;
   pointer-events: none;
-  transform-origin: center top;   /* se encoge hacia el icono de arriba */
-  scale: var(--flecha-scale); 
+  transform-origin: center top;
+  scale: var(--flecha-scale);
 }
 
 .flecha-1 {
-  bottom: -254px;
-  right: -66px;
+  bottom: calc(-254 * var(--k));
+  right: calc(-66 * var(--k));
   transform: rotate(9deg);
 }
 
 .flecha-2 {
-  bottom: -247px;
-  left: 15px;
+  bottom: calc(-247 * var(--k));
+  left: calc(15 * var(--k));
 }
 
 .flecha-3 {
-  bottom: -269px;
-  right: -57px;
+  bottom: calc(-269 * var(--k));
+  right: calc(-57 * var(--k));
 }
 
 .flecha-4 {
-  bottom: -267px;
-  left: 26px;
+  bottom: calc(-267 * var(--k));
+  left: calc(26 * var(--k));
 }
 
 .flecha-5 {
-  bottom: -268px;
-  right: -25px;
+  bottom: calc(-268 * var(--k));
+  right: calc(-25 * var(--k));
 }
 
-/* ===== DESKTOP: todo un poco más grande, mismas proporciones ===== */
+/* ===== DESKTOP: valores fijos en px, como los tenías ===== */
 @media (min-width: 900px) {
   .preparamos-container {
+    --k: 1px; /* en desktop 1 unidad = 1px */
     max-width: 860px;
     padding: 60px 20px;
   }
 
   .preparamos-titulo {
     font-size: 60px;
-    margin-top: 20px;   /* baja el título un poco */
+    margin-top: 20px;
   }
 
   .paso-icono {
@@ -152,42 +163,31 @@
   }
 
   .flecha-1 {
-    bottom: -280px;
-    right: 70px;
+    bottom: -355px;
+    right: 55px;
     transform: rotate(10deg);
   }
 
   .flecha-2 {
-    bottom: -250px;
+    bottom: -350px;
     left: 180px;
   }
 
   .flecha-3 {
-    bottom: -275px;
-    right: 25px;
+    bottom: -355px;
+    right: 50px;
   }
 
   .flecha-4 {
-    bottom: -285px;
-    left: 180px;
+    bottom: -385px;
+    left: 200px;
   }
 
   .flecha-5 {
-    bottom: -290px;
-    right: 145px;
+    bottom: -365px;
+    right: 120px;
   }
 }
-
-@media (max-width: 500px) {
-  .itinerario-container {
-    padding: 0 16px;
-  }
-
-  .preparamos-titulo {
-    font-size: 36px;
-  }
-}
-
 
 /* ===== Entrada por scroll (usa el mismo sistema que Details) ===== */
 .reveal-item {
@@ -201,16 +201,14 @@
   transform: translateY(0);
 }
 
-/* ===== Loop: balanceo leve lado a lado (izq y der por separado,
-   porque cada uno ya tiene una rotación base distinta -6deg/6deg
-   que hay que conservar dentro del keyframe) ===== */
+/* ===== Loop: balanceo leve lado a lado ===== */
 @keyframes wobbleIzq {
   0%, 100% { transform: rotate(-6deg) translateX(0); }
-  50%      { transform: rotate(-6deg) translateX(4px); }
+  50%      { transform: rotate(-6deg) translateX(calc(4 * var(--k))); }
 }
 @keyframes wobbleDer {
   0%, 100% { transform: rotate(6deg) translateX(0); }
-  50%      { transform: rotate(6deg) translateX(-4px); }
+  50%      { transform: rotate(6deg) translateX(calc(-4 * var(--k))); }
 }
 
 .paso-icono-izq .paso-icono { animation: wobbleIzq 5s ease-in-out infinite; }

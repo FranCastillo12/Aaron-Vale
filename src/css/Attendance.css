@@ -31,23 +31,29 @@
 
 .rsvp-container {
   position: relative;
+  display: grid;            /* marco y contenido en la misma celda */
   width: 125%;
-  max-width: 500px; /* antes 400px */
+  max-width: 500px;
+}
 
+/* El marco ocupa toda la celda y se estira con el contenido */
+.rsvp-container > :first-child {
+  grid-area: 1 / 1;
 }
 
 .rsvp-borde {
-  width: 100%;
-  height: auto;
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .rsvp-contenido {
-  position: absolute;
-  top: 34px;
-  left: 0;
+  grid-area: 1 / 1;
+  align-self: start;
+  position: relative;
+  top: 60px;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,6 +83,22 @@
   outline: none;
   box-sizing: border-box;
 }
+
+
+
+.campo-grupo,
+.rsvp-boton {
+  position: relative;
+  top: 50px;          /* sube o baja este número a tu gusto */
+}
+
+@media (min-width: 900px) {
+  .campo-grupo,
+  .rsvp-boton {
+    top: 100px;        /* valor para escritorio */
+  }
+}
+
 
 .rsvp-select {
     color: white;

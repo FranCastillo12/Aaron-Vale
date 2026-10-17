@@ -18,7 +18,7 @@ function Home() {
   setAbierto(true);
   audio.play().catch(() => {});
   setTimeout(() => {
-    navigate("/Main-Content");
+    navigate("/nuestra-boda");
   }, 1150); // coincide con la duración de la transición (1.1s) + un pelín de margen
 };
 

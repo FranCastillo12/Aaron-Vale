@@ -6,6 +6,8 @@
   align-items: center;
   padding: 40px 20px;
   box-sizing: border-box;
+   position: relative;
+  z-index: 1;
 }
 
 .gifts-titulo {
