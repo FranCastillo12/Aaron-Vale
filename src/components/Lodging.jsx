@@ -43,19 +43,19 @@ function Lodging() {
         <div className="fotos-collage">
           <div className="foto-slot foto-1">
             <RevealItem delay={0}>
-              <img src={image3} alt="Foto 1" className="foto-polaroid" />
+              <img src={image1} alt="Foto 1" className="foto-polaroid" />
             </RevealItem>
           </div>
 
           <div className="foto-slot foto-2">
             <RevealItem delay={0.15}>
-              <img src={image1} alt="Foto 2" className="foto-polaroid" />
+              <img src={image2} alt="Foto 2" className="foto-polaroid" />
             </RevealItem>
           </div>
 
           <div className="foto-slot foto-3">
             <RevealItem delay={0.3}>
-              <img src={image2} alt="Foto 3" className="foto-polaroid" />
+              <img src={image3} alt="Foto 3" className="foto-polaroid" />
             </RevealItem>
           </div>
 

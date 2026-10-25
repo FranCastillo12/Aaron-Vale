@@ -17,7 +17,7 @@ function Itinerary() {
         ref={tituloRef}
         className={`itinerary-titulo ${tituloVisible ? "is-visible" : ""}`}
       >
-        <h2 className="Details">Itinerario</h2>
+        <h2 className="Detailss">Itinerario</h2>
       </div>
 
       <div className="itinerary-row">
@@ -43,7 +43,7 @@ function Itinerary() {
                     src={Ceremonia}
                     alt=""
                     className="card-illustration"
-                    style={{ "--img-width": "110%", "--img-top": "14%" }}
+                    style={{ "--img-top": "2%" }}
                   />
                 </div>
               </div>
@@ -52,7 +52,7 @@ function Itinerary() {
               <div className="flip-face flip-back">
                 <img src={Tarjeta} alt="" className="card-bg" />
                 <div className="card-content">
-                  <h2 className="card-title">Ceremonia</h2>
+                  <h2 className="card-title-flip">Ceremonia</h2>
                   <p className="card-info">1:00 pm</p>
                   <p className="card-info">Hotel Marriott</p>
                   <p className="card-info">Hacienda Belén</p>
@@ -94,7 +94,7 @@ function Itinerary() {
                     src={Recepcion}
                     alt=""
                     className="card-illustration-reception"
-                    style={{ "--img-width": "80%", "--img-top": "15%" }}
+                    style={{   }}
                   />
                 </div>
               </div>
@@ -103,7 +103,7 @@ function Itinerary() {
               <div className="flip-face flip-back">
                 <img src={Tarjeta} alt="" className="card-bg" />
                 <div className="card-content">
-                  <h2 className="card-title">Recepción</h2>
+                  <h2 className="card-title-flip">Recepción</h2>
                   <p className="card-info">Al concluir la ceremonia</p>
                   <p className="card-info">
                     Cocktail, comida y fiesta en el <br /> mismo lugar

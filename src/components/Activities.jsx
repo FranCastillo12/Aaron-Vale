@@ -22,7 +22,7 @@ function Activities() {
       <div className="preparamos-timeline">
         {/* Paso 1: Tuktuk */}
 
-        <RevealItem delay={0}>
+       
           <div className="paso paso-icono-izq">
             <img
               src={Tuktuk}
@@ -35,11 +35,11 @@ function Activities() {
             </div>
             <img src={Flecha1} alt="" className="flecha flecha-1" />
           </div>
-        </RevealItem>
+        
 
         {/* Paso 2: Ceremonia */}
 
-        <RevealItem delay={0.15}>
+       
           <div className="paso paso-icono-der">
             <div className="paso-texto">
               <p className="paso-titulo">Ceremonia</p>
@@ -51,11 +51,11 @@ function Activities() {
             />
             <img src={Flecha2} alt="" className="flecha flecha-2" />
           </div>
-        </RevealItem>
+       
 
         {/* Paso 3: Cocktail */}
 
-        <RevealItem delay={0.3}>
+       
           <div className="paso paso-icono-izq">
             <img src={Oli} alt="Cocktail" className="paso-icono icono-oli" />
             <div className="paso-texto">
@@ -63,10 +63,10 @@ function Activities() {
             </div>
             <img src={Flecha3} alt="" className="flecha flecha-3" />
           </div>
-        </RevealItem>
+        
 
         {/* Paso 4: Comida */}
-        <RevealItem delay={0.45}>
+        
           <div className="paso paso-icono-der">
             <div className="paso-texto">
               <p className="paso-titulo">Comida</p>
@@ -74,10 +74,10 @@ function Activities() {
             <img src={Mesa} alt="Comida" className="paso-icono icono-mesa" />
             <img src={Flecha4} alt="" className="flecha flecha-4" />
           </div>
-        </RevealItem>
+       
 
         {/* Paso 5: Baile */}
-        <RevealItem delay={0.6}>
+        
           <div className="paso paso-icono-izq">
             <img src={Baile} alt="Baile" className="paso-icono icono-baile" />
             <div className="paso-texto">
@@ -85,10 +85,10 @@ function Activities() {
             </div>
             <img src={Flecha5} alt="" className="flecha flecha-5" />
           </div>
-        </RevealItem>
+       
 
         {/* Paso 6: Queque y cierre (sin flecha, es el último) */}
-        <RevealItem delay={0.75}>
+       
           <div className="paso paso-icono-der">
             <div className="paso-texto">
               <p className="paso-hora">8:00pm</p>
@@ -100,7 +100,7 @@ function Activities() {
               className="paso-icono icono-queque"
             />
           </div>
-        </RevealItem>
+       
       </div>
     </div>
   );

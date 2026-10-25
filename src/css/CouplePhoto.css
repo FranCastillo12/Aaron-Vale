@@ -2,8 +2,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: -3px;
-  padding: 16px;              /* evita que la foto pegue con los bordes del celular */
+   margin-top: 80px;
+    margin-bottom: 80px;
+          /* evita que la foto pegue con los bordes del celular */
   box-sizing: border-box;
 }
 

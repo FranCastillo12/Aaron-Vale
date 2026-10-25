@@ -10,13 +10,13 @@ function Gifts() {
         <h2 className="gifts-titulo">Mesa de regalos</h2>
       </RevealItem>
 
-      <RevealItem delay={0.2}>
+   
         <img
           src={Regalos}
           alt="Información de la mesa de regalos"
           className="gifts-imagen"
         />
-      </RevealItem>
+      
     </div>
   );
 }

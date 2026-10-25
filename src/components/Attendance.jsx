@@ -7,20 +7,33 @@ const Pareja = "/images/Activities/Baile.png";
 
 import RevealItem from "../components/RevealItem";
 
+/* Componente de afuera: espera a que exista el invitado */
 function Attendance() {
   const { invitado, enviar } = useInvitado();
 
-  const yaRespondio = invitado.personas.every(
-    (p) => invitado.respuestas[p] === "si" || invitado.respuestas[p] === "no",
-  );
+  if (!invitado) return null; // o un "Cargando..." si prefieres
 
-  const [respuestas, setRespuestas] = useState(invitado.respuestas);
+  return <AttendanceForm invitado={invitado} enviar={enviar} />;
+}
+
+/* Componente de adentro: tu lógica de siempre */
+function AttendanceForm({ invitado, enviar }) {
+  const personas = invitado.personas || [];
+  const respuestasIniciales = invitado.respuestas || {};
+
+  const yaRespondio =
+    personas.length > 0 &&
+    personas.every(
+      (p) => respuestasIniciales[p] === "si" || respuestasIniciales[p] === "no",
+    );
+
+  const [respuestas, setRespuestas] = useState(respuestasIniciales);
   const [sellado, setSellado] = useState(yaRespondio);
   const [bloqueado, setBloqueado] = useState(yaRespondio);
   const [guardando, setGuardando] = useState(false);
   const [error, setError] = useState("");
 
-  const completo = invitado.personas.every(
+  const completo = personas.every(
     (p) => respuestas[p] === "si" || respuestas[p] === "no",
   );
 
@@ -32,8 +45,7 @@ function Attendance() {
 
   const handleSubmit = async () => {
     if (bloqueado) return;
-
-    if (!seguro) return;
+    if (!completo) return;
 
     setGuardando(true);
     setError("");
@@ -65,22 +77,10 @@ function Attendance() {
       </RevealItem>
 
       <div className="rsvp-container">
-        <RevealItem delay={0.15}>
-          <img src={Borde} alt="" className="rsvp-borde" />
-        </RevealItem>
+        <img src={Borde} alt="" className="rsvp-borde" />
 
-        <div className="rsvp-contenido">
-          {/* <div className="campo-grupo">
-            <label className="rsvp-label">Nombre Completo</label>
-            <input
-              type="text"
-              className="rsvp-input"
-              value={invitado.nombres}
-              readOnly
-            />
-          </div> */}
-
-          {invitado.personas.map((persona) => (
+        <div className={`rsvp-contenido personas-${personas.length}`}>
+          {personas.map((persona) => (
             <div className="campo-grupo" key={persona}>
               <label className="rsvp-label">Asistencia de {persona}</label>
               <select
@@ -122,11 +122,9 @@ function Attendance() {
             )}
           </button>
 
-          <RevealItem delay={0.2}>
-            <div className="rsvp-pareja-wrap">
-              <img src={Pareja} alt="Pareja bailando" className="rsvp-pareja" />
-            </div>
-          </RevealItem>
+          <div className="rsvp-pareja-wrap">
+            <img src={Pareja} alt="Pareja bailando" className="rsvp-pareja" />
+          </div>
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@ return (
         <img src={SobreFondo} alt="" className="flap-layer" />
       </div>
 
-      {!abierto && <p style={{ textAlign: "center" }} className="hint">Toca el sobre para abrir</p>}
+      {!abierto && <p style={{ textAlign: "center" }} className="hint">TOCA EL SELLO PARA ABRIR</p>}
     </div>
   );
 }

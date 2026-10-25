@@ -6,9 +6,11 @@
 }
 
 .hospedaje-titulo {
+  margin-top: 90px;
   font-size: 65px;
   font-family: PrimaryFont;
   color: #fdfdfe;
+  margin-bottom: 40px;
 }
 
 .hotel-bloque {
@@ -41,14 +43,14 @@
 
 .hoteel {
   display: block;
-  width: 500px;
-  max-width: 90%;
+  width: 760px;
+  max-width: 100%;
   height: auto;
-   margin-top: -100px;
+   margin-top: -112px;
 }
 
 .boton-hospedaje {
-  margin-top: -50px;
+  margin-top: -150px;
   font-family: SecondaryFont, sans-serif;
   color: #ACC6DE;
   font-size: 28px;
@@ -58,13 +60,14 @@
   border-radius: 35px;
 
   height: 60px;
-  width: 250px;
+  width: 350px;
 
   cursor: pointer;
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 140px;
 }
 
 .boton-hospedaje:hover {
@@ -86,6 +89,7 @@
     font-size: 22px;
     width: 200px;
     height: 52px;
+    margin-top: -43px;
   }
 }
 
@@ -215,7 +219,7 @@ a.subrayado {
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  border: calc(8 * var(--k)) solid white;
+  border: calc(6 * var(--k)) solid white;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   object-fit: cover;
 }
@@ -253,7 +257,7 @@ a.subrayado {
   .fotos-collage {
     --ref: 390;             /* ancho de pantalla con el que lo diseñaste */
     --tam-movil: 0.85;
-    --k: calc(min(100vw, 500px) / var(--ref) * var(--tam-movil));
+    --k: calc(min(115vw, 500px) / var(--ref) * var(--tam-movil));
  
     width: calc(396 * var(--k));
     height: calc(220 * var(--k));

@@ -15,13 +15,6 @@ import { InvitadoProvider, useInvitado } from "./context/InvitadoContext";
 function Gate({ children }) {
   const { estado } = useInvitado();
 
-  if (estado === "cargando") {
-    return (
-      <p style={{ textAlign: "center", marginTop: "30vh" }}>
-        Cargando tu invitación…
-      </p>
-    );
-  }
 
   if (estado === "invalido") {
     return (

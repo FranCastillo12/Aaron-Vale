@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   animation: fadeIn 1.2s ease forwards;
+  margin-top: 90px;
 
 }
 
@@ -16,6 +17,8 @@
   transition:
     opacity 0.7s var(--ease-entrada),
     transform 0.7s var(--ease-entrada);
+
+    margin-bottom: 40px;
 }
 
 .Details-titulo.is-visible {
@@ -43,6 +46,7 @@
   aspect-ratio: 1 / 1;
   perspective: 1600px;
   cursor: pointer;
+    margin: 0;
 }
 
 .flipcard-face {
@@ -82,7 +86,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+
 }
 
 

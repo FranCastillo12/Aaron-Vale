@@ -8,11 +8,14 @@ import Details from "../components/Details";
 import Activities from "../components/Activities";
 import Lodging from "../components/Lodging";
 import Gifts from "../components/Gifts";
+import PhotoSlider from "../components/PhotoSlider";
+
 import Attendance from "../components/Attendance";
 import Footer from "../components/Footer";
 
 
 import audio from "../audioManager";
+import { Phi } from "lucide-react";
 
 
 export default function MainContent() {
@@ -54,6 +57,7 @@ export default function MainContent() {
       <CouplePhoto />
       <Itinerary />
       <Details />
+      <PhotoSlider />
       <Activities />
       <Lodging />
       <Gifts />

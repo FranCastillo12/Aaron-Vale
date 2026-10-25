@@ -61,23 +61,72 @@
   opacity: 0;
 }
 
-
 .hint{
   position: absolute;
-  bottom: max(32px, env(safe-area-inset-bottom));
-  left: 0;
-  width: 100%;
-  text-align: center;           /* en tu captura el texto quedaba desalineado */
+  bottom: max(40px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;                    /* el recuadro se ajusta al texto */
   margin: 0;
-  font-size: 0.95rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(60, 48, 38, .75);
-  animation: hint-pulse 2.2s ease-in-out infinite;
-  pointer-events: none;
+  padding: 12px 28px;
+
+  background: #ece4de;            /* un poco más oscuro que el papel (#f8f4f1) */
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(90, 70, 60, .12);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: none;
+  text-align: center;
+  white-space: nowrap;
+  color: #7f97c6;
+
 }
 
 @keyframes hint-pulse{
   0%, 100%{ opacity: .45; }
   50%{ opacity: 1; }
+}
+
+@media (min-aspect-ratio: 1/1){
+
+  :root{
+    --zoom: 1;
+    --paper: #f8f4f1;
+
+    /* El sello está ~6.4dvh a la izquierda y ~2.6dvh abajo del centro */
+    --shift-x: 6.4dvh;
+    --shift-y: 2.6dvh;
+
+    /* Posición real del sello en pantalla (origen del zoom) */
+    --seal-x: calc(50% - 6.4dvh);
+    --seal-y: 47.4%;
+  }
+
+  .home-container{
+    background: var(--paper);
+  }
+
+  .envelope img{
+    object-fit: contain;
+  }
+
+  .envelope.open{
+    transform: translate(var(--shift-x), var(--shift-y)) scale(3);
+  }
+
+
+  .hint{
+ 
+  font-size: 20px;
+
+
+
+}
+
+
+
 }
