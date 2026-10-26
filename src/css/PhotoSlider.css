@@ -26,8 +26,8 @@
 .slider {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;        /* cambia a 1 / 1 o 3 / 4 según tus fotos */
-  max-height: 90vh;           /* igual que tu foto: no se sale de la pantalla */
+    /* cambia a 1 / 1 o 3 / 4 según tus fotos */
+  
   overflow: hidden;
   border-radius: 12px;
   touch-action: pan-y;

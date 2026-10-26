@@ -242,6 +242,14 @@
 @media (max-width: 600px) {
 
 
+
+  .rsvp-contenido {
+
+  padding: 43% 16% 0%;     /* 1.º: baja el texto del borde de arriba, 3.º: espacio al fondo */
+
+}
+
+
   .personas-3,
   .personas-2 {
     padding-top: 35%;

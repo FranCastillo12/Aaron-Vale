@@ -24,9 +24,9 @@
 }
 
 .CouplePhoto {
-  width: 100%;                /* siempre 100% del contenedor, no un valor fijo */
+   image-rendering: auto;
+     width: 100%;                /* siempre 100% del contenedor, no un valor fijo */
   height: auto;
-  max-height: 90vh;           /* si la foto es vertical, que no se salga de la pantalla */
   border-radius: 12px;
   object-fit: cover;
   display: block;

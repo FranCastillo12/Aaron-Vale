@@ -1,8 +1,8 @@
 import "../css/CouplePhoto.css";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
+const CouplePhoto1 = "/images/AaronVale/CouplePhoto.jpeg";
 
-const Olivia = "/images/Olivia.jpg";
 
 function CouplePhoto() {
   const { ref, visible } = useScrollReveal();
@@ -13,7 +13,7 @@ function CouplePhoto() {
         ref={ref}
         className={`CouplePhoto-wrap ${visible ? "is-visible" : ""}`}
       >
-        <img src={Olivia} alt="CouplePhoto" className="CouplePhoto" />
+        <img src={CouplePhoto1} alt="CouplePhoto" className="CouplePhoto" />
       </div>
     </div>
   );

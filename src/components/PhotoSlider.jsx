@@ -4,9 +4,9 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 
 // Cambia estas rutas por tus fotos
 const fotos = [
-  "/images/Olivia.jpg",
-  "/images/Foto2.jpg",
-  "/images/Foto3.jpg",
+  "/images/AaronVale/Slider1.jpeg",
+  "/images/AaronVale/Slider2.jpeg",
+  "/images/AaronVale/Slider3.jpeg",
 ];
 
 function PhotoSlider() {
