@@ -17,7 +17,7 @@ function Lodging() {
   const [mostrarTarjeta, setMostrarTarjeta] = useState(false);
 
   return (
-    <div className="invitacion-container">
+    <div className="Lodging-container">
       <RevealItem>
         <div className="hospedaje-titulo">
           <h2 className="hospedaje">Hospedaje</h2>

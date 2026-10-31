@@ -1,3 +1,10 @@
+.Attendance-container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .invitacion-titulo {
   font-family: PrimaryFont;
   color: white;

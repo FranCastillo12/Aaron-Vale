@@ -69,7 +69,7 @@ function AttendanceForm({ invitado, enviar }) {
   };
 
   return (
-    <div className="invitacion-container">
+    <div className="Attendance-container">
       <RevealItem>
         <div className="Attendance-titulo">
           <h2 className="Attendance"> ¿Nos acompañarás?</h2>

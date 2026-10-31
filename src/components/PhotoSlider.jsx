@@ -6,7 +6,6 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 const fotos = [
   "/images/AaronVale/Slider1.jpeg",
   "/images/AaronVale/Slider2.jpeg",
-  "/images/AaronVale/Slider3.jpeg",
 ];
 
 function PhotoSlider() {

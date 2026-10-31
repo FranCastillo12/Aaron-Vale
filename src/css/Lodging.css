@@ -1,8 +1,9 @@
-.invitacion-container {
+.Lodging-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: -132px;
 }
 
 .hospedaje-titulo {

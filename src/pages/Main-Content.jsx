@@ -3,6 +3,9 @@ import "../css/MainContent.css";
 import Hero from "../components/Hero";
 
 import CouplePhoto from "../components/CouplePhoto";
+import CouplePhoto2 from "../components/CouplePhoto2";
+
+
 import Itinerary from "../components/Itinerary";
 import Details from "../components/Details";
 import Activities from "../components/Activities";
@@ -60,9 +63,12 @@ export default function MainContent() {
       <PhotoSlider />
       <Activities />
       <Lodging />
+      <CouplePhoto2 />
       <Gifts />
       <Attendance />
-      <Footer />
+      <footer>
+        <Footer />
+          </footer>
     </>
   );
 }
