@@ -24,6 +24,7 @@
 
 /* ===== Slider (ocupa el mismo ancho que tenía la foto) ===== */
 .slider {
+  margin-top: 120px;
   position: relative;
   width: 100%;
     /* cambia a 1 / 1 o 3 / 4 según tus fotos */

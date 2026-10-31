@@ -40,14 +40,16 @@
 }
 
 
+
 .flipcard {
   position: relative;
-  width: min(160vw, 540px);
+  width: min(160vw, 700px);
   aspect-ratio: 1 / 1;
   perspective: 1600px;
   cursor: pointer;
     margin: 0;
 }
+
 
 .flipcard-face {
   position: absolute;
@@ -89,6 +91,10 @@
 
 }
 
+.flipcard-wrap {
+  margin-bottom: -60px; /* ajusta hasta que se peguen como quieres */
+}
+
 
 @media (max-width: 500px) {
   .Details-titulo {
@@ -98,6 +104,16 @@
   .Details {
     margin-top: -1px;
   }
+
+  
+.flipcard {
+  position: relative;
+  width: min(160vw, 540px);
+  aspect-ratio: 1 / 1;
+  perspective: 1600px;
+  cursor: pointer;
+    margin: 0;
+}
 }
 
 

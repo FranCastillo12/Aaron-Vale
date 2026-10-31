@@ -28,9 +28,11 @@
 .rsvp-borde {
   grid-area: 1 / 1;
   display: block;
-  width: 100%;
+  width: 120%;
+    max-width: none; 
   height: 100%;
   align-self: stretch;
+    justify-self: center; 
   object-fit: fill;
 }
 
@@ -170,7 +172,7 @@
   }
 
   .personas-3 {
-    gap: 0.8rem;
+    gap: 1.8rem;
     padding-top: 41%;
   }
 
@@ -179,12 +181,12 @@
   }
 
   .personas-3 .rsvp-label {
-    font-size: 1.4rem;
+    font-size: 30px;
   }
 
   .rsvp-input,
   .rsvp-select {
-    font-size: 1.1rem;
+    font-size: 24px;
     padding: 0.7rem 1.2rem;
   }
 
@@ -252,17 +254,17 @@
 
   .personas-3,
   .personas-2 {
-    padding-top: 35%;
+    padding-top:45%;
     gap: 0.4rem;
   }
 
   .campo-grupo {
-    width: 100%;
+    width: 115%;
   }
 
   .rsvp-label,
   .personas-3 .rsvp-label {
-    font-size: 0.95rem;
+    font-size: 22px;
     line-height: 1.15;
     margin: 0 0 0.3rem 0;
     max-width: 90%;
@@ -277,14 +279,14 @@
   }
 
   .rsvp-boton {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     font-size: 0.7rem;
     margin-top: 1.5rem;
   }
 
   .personas-3 .rsvp-pareja,
   .rsvp-pareja {
-    width: 32%;
+    width: 50%;
   }
 }

@@ -106,7 +106,7 @@ function Itinerary() {
                   <h2 className="card-title-flip">Recepción</h2>
                   <p className="card-info">Al concluir la ceremonia</p>
                   <p className="card-info">
-                    Cocktail, comida y fiesta en el <br /> mismo lugar
+                    Cocktail, comida y  <br /> fiesta en el mismo lugar
                   </p>
                 </div>
               </div>

@@ -43,14 +43,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: calc(5 * var(--k));
+
 }
 
 .paso {
   position: relative;
   display: flex;
   align-items: center;
-  gap: calc(5 * var(--k));
+
 }
 
 .paso-icono-izq {
@@ -62,7 +62,7 @@
 }
 
 .paso-icono {
-  width: calc(200 * var(--k));
+  width: calc(215 * var(--k));
   height: auto;
 }
 
@@ -95,7 +95,7 @@
 
 .paso-titulo {
   font-family: PrimaryFont;
-  font-size: calc(30 * var(--k));
+  font-size: calc(26 * var(--k));
   font-weight: 600;
   margin: 0;
 }
