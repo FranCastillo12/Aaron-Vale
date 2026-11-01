@@ -8,7 +8,7 @@ const tarjetas = [
     id: "Dresscode",
     notas: "/images/Details/TARJETA02_DRESSCODE.png",
    
-    info: "/images/Details/formal.png",
+    info: "/images/Details/TARJETA02_FORMAL.png",
 
   },
   {
